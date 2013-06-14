@@ -1,0 +1,29 @@
+@model SkautSIS.PersonGroups.ViewModels.PersonGroupDetailsViewModel
+@using SkautSIS.PersonGroups.Models;
+@using SkautSIS.PersonGroups.Extensions;
+
+@{
+    var personGroupIndex = 0;
+
+    Layout.Title = T("Person group detail").ToString();
+}
+
+<div class="manage"><a class="button primaryAction" href="@Url.PersonGroupList()">@T("Back To List")</a></div>
+@if (Model.PersonGroup.Type == TypeEnum.Custom)
+{
+    <div class="manage">@Html.ActionLink(T("Edit").ToString(), "Edit", new { id = Model.PersonGroup.PersonGroupId }, new { @class = "button primaryAction" })</div>
+}
+
+<h2>@Model.PersonGroup.DisplayName</h2>
+<div id="Type">
+    @T("Person group type:") @Model.PersonGroup.Type.ToString()
+</div>
+
+<h3>@T("Members")</h3>
+<ul>
+@foreach (var member in Model.Members)
+{
+    <li>@string.Format("{0} {1} - {2}", member.FirstName, member.LastName, member.NickName)</li>
+}
+</ul>
+

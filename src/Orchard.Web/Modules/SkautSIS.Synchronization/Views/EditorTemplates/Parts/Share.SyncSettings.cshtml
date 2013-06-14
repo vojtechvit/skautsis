@@ -1,0 +1,20 @@
+﻿@model SkautSIS.Synchronization.Models.SyncSettingsPart
+@using SkautSIS.Synchronization.Models;
+
+<fieldset>
+    <legend>@T("Automated synchronization settigs")</legend>
+    <div>
+        @Html.LabelFor(m => m.AllowAutomatedSynchronization, @T("Allow automated synchronization"))
+        @Html.EditorFor(m => m.AllowAutomatedSynchronization)
+        @Html.ValidationMessageFor(m => m.AllowAutomatedSynchronization, "*")
+    </div>
+    <div>
+        @Html.LabelFor(m => m.SyncFrequency, @T("Perform synchronization every:"))
+        @Html.EditorFor(m => m.SyncFrequency)
+        @Html.ValidationMessageFor(m => m.SyncFrequency, "*")
+    </div>
+    <div>
+        @Html.DropDownListFor(m => m.SyncFrequencyType,
+                          new System.Web.Mvc.SelectList(Model.AvailableFrequencyType, "Value", "Text", (int)Model.SyncFrequencyType))
+    </div>
+</fieldset>

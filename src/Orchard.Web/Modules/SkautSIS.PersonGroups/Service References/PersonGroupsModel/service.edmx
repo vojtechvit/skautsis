@@ -1,0 +1,50 @@
+﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0" m:MaxDataServiceVersion="3.0">
+    <Schema Namespace="SkautSIS.Services.PersonGroups.Models" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      <EntityContainer Name="PersonGroupsContext" m:IsDefaultEntityContainer="true">
+        <FunctionImport Name="GetPersonGroupMembers" EntitySet="Persons" ReturnType="Collection(SkautSIS.Services.PersonGroups.Models.Person)" m:HttpMethod="GET">
+          <Parameter Name="personGroupId" Type="Edm.Int32" Mode="In" />
+        </FunctionImport>
+        <FunctionImport Name="UpdatePersonGroupMembers" m:HttpMethod="GET">
+          <Parameter Name="personGroupId" Type="Edm.Int32" Mode="In" />
+          <Parameter Name="personIds" Type="Edm.String" Mode="In" />
+        </FunctionImport>
+        <EntitySet Name="Persons" EntityType="SkautSIS.Services.PersonGroups.Models.Person" />
+        <EntitySet Name="PersonGroups" EntityType="SkautSIS.Services.PersonGroups.Models.PersonGroup" />
+        <EntitySet Name="EdmMetadatas" EntityType="SkautSIS.Services.PersonGroups.Models.EdmMetadata" />
+        <AssociationSet Name="PersonGroup_Persons" Association="SkautSIS.Services.PersonGroups.Models.PersonGroup_Persons">
+          <End Role="PersonGroup_Persons_Source" EntitySet="PersonGroups" />
+          <End Role="PersonGroup_Persons_Target" EntitySet="Persons" />
+        </AssociationSet>
+      </EntityContainer>
+      <EntityType Name="Person">
+        <Key>
+          <PropertyRef Name="PersonId" />
+        </Key>
+        <Property Name="PersonId" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="SkautIsUserId" Type="Edm.Int32" Nullable="false" />
+        <NavigationProperty Name="Groups" Relationship="SkautSIS.Services.PersonGroups.Models.PersonGroup_Persons" FromRole="PersonGroup_Persons_Target" ToRole="PersonGroup_Persons_Source" />
+      </EntityType>
+      <EntityType Name="PersonGroup">
+        <Key>
+          <PropertyRef Name="PersonGroupId" />
+        </Key>
+        <Property Name="PersonGroupId" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="DisplayName" Type="Edm.String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+        <Property Name="Type" Type="Edm.Int32" Nullable="false" />
+        <NavigationProperty Name="Persons" Relationship="SkautSIS.Services.PersonGroups.Models.PersonGroup_Persons" FromRole="PersonGroup_Persons_Source" ToRole="PersonGroup_Persons_Target" />
+      </EntityType>
+      <EntityType Name="EdmMetadata">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="ModelHash" Type="Edm.String" Nullable="true" MaxLength="128" Unicode="true" FixedLength="false" />
+      </EntityType>
+      <Association Name="PersonGroup_Persons">
+        <End Role="PersonGroup_Persons_Source" Type="SkautSIS.Services.PersonGroups.Models.PersonGroup" Multiplicity="*" />
+        <End Role="PersonGroup_Persons_Target" Type="SkautSIS.Services.PersonGroups.Models.Person" Multiplicity="*" />
+      </Association>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

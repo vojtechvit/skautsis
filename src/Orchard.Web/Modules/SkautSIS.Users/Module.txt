@@ -1,0 +1,12 @@
+Name: SkautSIS Users
+AntiForgery: enabled
+Author: Pavel Volek
+Website: http://orchardproject.net
+Version: 1.0
+OrchardVersion: 1.0
+Path: skautsis-users
+Category: SkautSIS
+Description: The users module enables user management and SkautIS authentication.
+FeatureDescription: User managing functionalities.
+Dependencies: SkautSIS.Core, SkautSIS.Synchronization
+Tags: SkautSIS

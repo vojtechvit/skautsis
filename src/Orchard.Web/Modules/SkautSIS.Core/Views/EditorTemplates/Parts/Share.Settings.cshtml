@@ -1,0 +1,26 @@
+﻿@model SkautSIS.Core.Models.GeneralSettingsPart
+@using SkautSIS.Core.Models;
+
+<fieldset>
+    <legend>@T("General settigs")</legend>
+    <div>
+        @Html.LabelFor(m => m.UnitId, @T("Unit identification number"))
+        @Html.EditorFor(m => m.UnitId)
+        @Html.ValidationMessageFor(m => m.UnitId, "*")
+    </div>    
+    <div>
+        @Html.LabelFor(m => m.AppId, @T("Application identification number"))
+        @Html.EditorFor(m => m.AppId)
+        @Html.ValidationMessageFor(m => m.AppId, "*")
+    </div>
+    <div>
+        @Html.LabelFor(m => m.SkautIsServicesUrl, @T("SkautIsServicesUrl"))
+        @Html.EditorFor(m => m.SkautIsServicesUrl)
+        @Html.ValidationMessageFor(m => m.SkautIsServicesUrl, "*")
+    </div>
+    <div>
+        @Html.LabelFor(m => m.SkautSisServicesUrl, @T("SkautSisServicesUrl"))
+        @Html.EditorFor(m => m.SkautSisServicesUrl)
+        @Html.ValidationMessageFor(m => m.SkautSisServicesUrl, "*")
+    </div>
+</fieldset>

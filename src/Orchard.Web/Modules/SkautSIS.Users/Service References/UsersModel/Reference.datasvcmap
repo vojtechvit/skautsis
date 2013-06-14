@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9445c8ca-aafa-477a-bc28-2828c39656c2" xmlns="urn:schemas-microsoft-com:xml-dataservicemap">
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:7838/Services/UsersService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.edmx" MetadataType="Edmx" ID="db89564f-58da-4e3d-a506-b666ae43d4be" SourceId="1" SourceUrl="http://localhost:7838/Services/UsersService.svc" />
+  </Metadata>
+  <Extensions />
+  <Parameters>
+    <Parameter Name="Version" Value="3.0" />
+    <Parameter Name="ClientAssemblyReference" Value="C:\Program Files\WCF Data Services Mar 2011 CTP2\bin\.NETFramework\Microsoft.Data.Services.Client.dll" />
+  </Parameters>
+</ReferenceGroup>

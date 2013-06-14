@@ -1,0 +1,64 @@
+@model SkautSIS.Users.ViewModels.UsersIndexViewModel
+@using SkautSIS.Users.Models;
+@using SkautSIS.Users.ViewModels;
+
+@{
+    var userIndex = 0;
+
+    Layout.Title = T("Users").ToString();
+}
+
+@using (Html.BeginFormAntiForgeryPost()) { 
+    @Html.ValidationSummary()
+    <div class="manage">@Html.ActionLink(T("Add a new user").ToString(), "Create", new { }, new { @class = "button primaryAction" })</div>
+
+    <fieldset class="bulk-actions">     
+        <label for="Search">@T("Filter:")</label>
+        @Html.TextBoxFor(m => m.Options.Search, new { @class = "text" })   
+        <label for="filterResults">@T("Sort by:")</label>
+        <select id="filterResults" name="@Html.NameOf(m => m.Options.Order)">
+            @Html.SelectOption(Model.Options.Order, UsersOrder.Name, T("Name").ToString())
+            @Html.SelectOption(Model.Options.Order, UsersOrder.NickName, T("Nick name").ToString())
+            @Html.SelectOption(Model.Options.Order, UsersOrder.Email, T("Email").ToString())
+        </select>
+
+        <button type="submit" name="submit.Filter" value="@T("Filter")">@T("Filter")</button>
+    </fieldset>
+    <fieldset>
+        <table class="items">
+            <thead>
+                <tr>
+                    <th scope="col">@T("Lastname")</th>
+                    <th scope="col">@T("Firstname")</th>
+                    <th scope="col">@T("Nickname")</th>
+                    <th scope="col">@T("Email")</th>
+                    <th scope="col">@T("Actions")</th>
+                </tr>
+            </thead>
+            @foreach (var entry in Model.Users)
+            { 
+            <tr>
+                <td>
+                    @entry.User.LastName 
+                </td>
+                <td>
+                    @entry.User.FirstName 
+                </td>
+                <td>
+                    @entry.User.NickName 
+                </td>
+                <td>
+                    @entry.User.Email 
+                </td>
+                <td>
+                    @Html.ActionLink(T("Detail").ToString(), "Detail", new { entry.User.SkautIsPersonId }) 
+                    @*| @Html.ActionLink(T("Delete").ToString(), "Delete", new { entry.User.SkautIsUserId }, new { itemprop = "RemoveUrl UnsafeUrl" })*@
+                </td>
+            </tr>
+                userIndex++;
+            }
+        </table>
+
+
+    </fieldset>
+} 
