@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<XMI xmi.version="1.1" xmlns:UML="omg.org/UML1.3">
+	<XMI.header>
+		<XMI.documentation>
+			<XMI.exporter>Enterprise Architect</XMI.exporter>
+			<XMI.exporterVersion>2.5</XMI.exporterVersion>
+		</XMI.documentation>
+	</XMI.header>
+	<XMI.content>
+		<UML:Model name="EA Model" xmi.id="MX_EAID_D87A66D4_A60A_41fc_ADF3_23D5B9128074">
+			<UML:Namespace.ownedElement>
+				<UML:Class name="EARootClass" xmi.id="EAID_11111111_5487_4080_A7F4_41526CB0AA00" isRoot="true" isLeaf="false" isAbstract="false"/>
+				<UML:Package name="&#268;lánky" xmi.id="EAPK_D87A66D4_A60A_41fc_ADF3_23D5B9128074" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
+					<UML:ModelElement.taggedValue>
+						<UML:TaggedValue tag="parent" value="EAPK_312F6BF0_D152_46ef_BA86_3C50F0808B25"/>
+						<UML:TaggedValue tag="created" value="2010-11-04 00:00:00"/>
+						<UML:TaggedValue tag="modified" value="2010-11-08 21:25:38"/>
+						<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
+						<UML:TaggedValue tag="xmlpath" value="ea2\23D5B9128074.xml"/>
+						<UML:TaggedValue tag="lastloaddate" value="2010-11-11 02:58:25"/>
+						<UML:TaggedValue tag="lastsavedate" value="2010-11-05 11:51:02"/>
+						<UML:TaggedValue tag="version" value="1.0"/>
+						<UML:TaggedValue tag="isprotected" value="FALSE"/>
+						<UML:TaggedValue tag="usedtd" value="FALSE"/>
+						<UML:TaggedValue tag="logxml" value="FALSE"/>
+						<UML:TaggedValue tag="tpos" value="0"/>
+						<UML:TaggedValue tag="packageFlags" value="VCCFG=SVN_ISSS;CheckedOutOffline=0;CRC=0;"/>
+						<UML:TaggedValue tag="batchsave" value="0"/>
+						<UML:TaggedValue tag="batchload" value="0"/>
+						<UML:TaggedValue tag="phase" value="1.0"/>
+						<UML:TaggedValue tag="status" value="Proposed"/>
+						<UML:TaggedValue tag="author" value="Marek Kožnar"/>
+						<UML:TaggedValue tag="complexity" value="1"/>
+						<UML:TaggedValue tag="ea_stype" value="Public"/>
+						<UML:TaggedValue tag="tpos" value="0"/>
+						<UML:TaggedValue tag="gentype" value="Java"/>
+					</UML:ModelElement.taggedValue>
+					<UML:Namespace.ownedElement>
+						<UML:UseCase name="CLA.01 Zobrazit &#269;lánek" xmi.id="EAID_0A6EA621_A87B_449e_94B0_7E61511D964D" visibility="public" namespace="EAPK_D87A66D4_A60A_41fc_ADF3_23D5B9128074" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="documentation" value="Zobrazit &#269;lánek.&#xA;"/>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="package" value="EAPK_D87A66D4_A60A_41fc_ADF3_23D5B9128074"/>
+								<UML:TaggedValue tag="date_created" value="2010-10-19 20:06:11"/>
+								<UML:TaggedValue tag="date_modified" value="2010-11-10 12:32:36"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="&#268;lánky"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="Marek Kožnar"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="2418"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:UseCase>
+						<UML:Association xmi.id="EAID_037A4CF2_673E_447a_B31E_0F0EEE24DC90" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="UseCase"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="2053"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Návšt&#283;vník"/>
+								<UML:TaggedValue tag="ea_targetName" value="CLA.01 Zobrazit &#269;lánek"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Actor"/>
+								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_sourceID" value="2340"/>
+								<UML:TaggedValue tag="ea_targetID" value="2418"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Association.connection>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="false" type="EAID_0E7809DE_3841_4a99_B69B_6989F8E6258A">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="source"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_0A6EA621_A87B_449e_94B0_7E61511D964D">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="target"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+							</UML:Association.connection>
+						</UML:Association>
+						<UML:UseCase name="CLA.04 Upravit &#269;lánek" xmi.id="EAID_14DE1B61_CA33_4d13_9B7A_9E34D205891D" visibility="public" namespace="EAPK_D87A66D4_A60A_41fc_ADF3_23D5B9128074" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="documentation" value="Upravit &#269;lánek.&#xA;"/>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="package" value="EAPK_D87A66D4_A60A_41fc_ADF3_23D5B9128074"/>
+								<UML:TaggedValue tag="date_created" value="2010-10-19 20:35:30"/>
+								<UML:TaggedValue tag="date_modified" value="2010-11-10 12:32:20"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="&#268;lánky"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="Marek Kožnar"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="2419"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:UseCase>
+						<UML:Association xmi.id="EAID_E34C4679_8C35_4b8b_85F7_954E22E1BE4F" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="include"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="UseCase"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="subtype" value="Includes"/>
+								<UML:TaggedValue tag="stereotype" value="include"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«include»"/>
+								<UML:TaggedValue tag="ea_localid" value="2124"/>
+								<UML:TaggedValue tag="ea_sourceName" value="CLA.04 Upravit &#269;lánek"/>
+								<UML:TaggedValue tag="ea_targetName" value="CLA.03 Nastavit oprávn&#283;ní k &#269;lánku"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_sourceID" value="2419"/>
+								<UML:TaggedValue tag="ea_targetID" value="2420"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={009FFFAE-4FB4-471a-861D-21459097ADA1}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=include;GUID={9DCD8EF2-2012-4105-B90C-1FB46694AB8C};@ENDSTEREO;$DES;$CLT={E34C4679-8C35-4b8b-85F7-954E22E1BE4F}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«include»"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Association.connection>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="false" type="EAID_14DE1B61_CA33_4d13_9B7A_9E34D205891D">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="source"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_72DB9B69_6B13_4ca1_B28E_039A70E2A607">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="target"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+							</UML:Association.connection>
+						</UML:Association>
+						<UML:Association xmi.id="EAID_84101584_4484_49ca_AA5F_51ECFDDC7A6F" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Association"/>
+								<UML:TaggedValue tag="direction" value="Unspecified"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="2002"/>
+								<UML:TaggedValue tag="ea_sourceName" value="P&#345;ihlášený uživatel"/>
+								<UML:TaggedValue tag="ea_targetName" value="CLA.04 Upravit &#269;lánek"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Actor"/>
+								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_sourceID" value="2354"/>
+								<UML:TaggedValue tag="ea_targetID" value="2419"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={7C117987-BACE-4a44-A669-2F40767D13AF}$XID;$NAM=CustomProperties$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isDerived@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=false@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={84101584-4484-49ca-AA5F-51ECFDDC7A6F}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="$ea_src_xref_property" value="$XREFPROP=$XID={1DEED51A-B8FC-42b8-A179-950FB27C93E4}$XID;$NAM=CustomProperties$NAM;$TYP=connectorSrcEnd property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isComposite@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=isDerivedUnion@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=false@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=default@ENDNAME;@TYPE=String@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=isReadOnly@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=false@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=isDerived@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=false@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=aggregation@ENDNAME;@TYPE=AggregationKind@ENDTYPE;@VALU=none@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={84101584-4484-49ca-AA5F-51ECFDDC7A6F}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="$ea_dst_xref_property" value="$XREFPROP=$XID={3C5ABBD1-2AB7-401e-8C28-0D459EA809B2}$XID;$NAM=CustomProperties$NAM;$TYP=connectorDestEnd property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isComposite@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=isDerivedUnion@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=false@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=default@ENDNAME;@TYPE=String@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=isReadOnly@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=false@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=isDerived@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=false@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=aggregation@ENDNAME;@TYPE=AggregationKind@ENDTYPE;@VALU=none@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={84101584-4484-49ca-AA5F-51ECFDDC7A6F}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Association.connection>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_C47AAE96_4C09_43db_A594_49CF9D54C92A">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+										<UML:TaggedValue tag="ea_end" value="source"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_14DE1B61_CA33_4d13_9B7A_9E34D205891D">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+										<UML:TaggedValue tag="ea_end" value="target"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+							</UML:Association.connection>
+						</UML:Association>
+						<UML:Association xmi.id="EAID_A7CD044C_62DB_46b1_96E6_90B6E64EED6E" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="extend"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="UseCase"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="subtype" value="Extends"/>
+								<UML:TaggedValue tag="stereotype" value="extend"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«extend»"/>
+								<UML:TaggedValue tag="ea_localid" value="2126"/>
+								<UML:TaggedValue tag="ea_sourceName" value="CLA.06 Nahrát p&#345;ílohu ke &#269;lánku"/>
+								<UML:TaggedValue tag="ea_targetName" value="CLA.04 Upravit &#269;lánek"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_sourceID" value="2424"/>
+								<UML:TaggedValue tag="ea_targetID" value="2419"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={1FCD6B15-C5BB-4383-8BBA-C180F0932CC5}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=extend;GUID={D07E4032-604C-46f4-9465-C15288862D2B};@ENDSTEREO;$DES;$CLT={A7CD044C-62DB-46b1-96E6-90B6E64EED6E}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«extend»"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Association.connection>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="false" type="EAID_6A9D30DB_B003_4e82_90F9_F98403F73452">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="source"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_14DE1B61_CA33_4d13_9B7A_9E34D205891D">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="target"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+							</UML:Association.connection>
+						</UML:Association>
+						<UML:Association xmi.id="EAID_B7A03263_20FE_46cd_83A8_63CB8E961C19" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="extend"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="UseCase"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="subtype" value="Extends"/>
+								<UML:TaggedValue tag="stereotype" value="extend"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«extend»"/>
+								<UML:TaggedValue tag="ea_localid" value="2127"/>
+								<UML:TaggedValue tag="ea_sourceName" value="CLA.07 Smazat p&#345;ílohu ze &#269;lánku"/>
+								<UML:TaggedValue tag="ea_targetName" value="CLA.04 Upravit &#269;lánek"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_sourceID" value="2425"/>
+								<UML:TaggedValue tag="ea_targetID" value="2419"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={BB81F139-934F-4169-9754-7483AADA8D05}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=extend;GUID={D07E4032-604C-46f4-9465-C15288862D2B};@ENDSTEREO;$DES;$CLT={B7A03263-20FE-46cd-83A8-63CB8E961C19}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«extend»"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Association.connection>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="false" type="EAID_FD9DB295_9665_4d1d_AD43_C3C35D6E9369">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="source"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_14DE1B61_CA33_4d13_9B7A_9E34D205891D">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="target"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+							</UML:Association.connection>
+						</UML:Association>
+						<UML:UseCase name="CLA.06 Nahrát p&#345;ílohu ke &#269;lánku" xmi.id="EAID_6A9D30DB_B003_4e82_90F9_F98403F73452" visibility="public" namespace="EAPK_D87A66D4_A60A_41fc_ADF3_23D5B9128074" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="documentation" value="Nahrání souborové p&#345;ílohy ke &#269;lánku.&#xA;"/>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="package" value="EAPK_D87A66D4_A60A_41fc_ADF3_23D5B9128074"/>
+								<UML:TaggedValue tag="date_created" value="2010-11-11 02:58:36"/>
+								<UML:TaggedValue tag="date_modified" value="2010-11-11 02:59:22"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="&#268;lánky"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="Vojta"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="2424"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:UseCase>
+						<UML:UseCase name="CLA.03 Nastavit oprávn&#283;ní k &#269;lánku" xmi.id="EAID_72DB9B69_6B13_4ca1_B28E_039A70E2A607" visibility="public" namespace="EAPK_D87A66D4_A60A_41fc_ADF3_23D5B9128074" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="documentation" value="Nastavení oprávn&#283;ní k &#269;lánku.&#xA;"/>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="package" value="EAPK_D87A66D4_A60A_41fc_ADF3_23D5B9128074"/>
+								<UML:TaggedValue tag="date_created" value="2010-11-10 11:44:14"/>
+								<UML:TaggedValue tag="date_modified" value="2010-11-11 02:13:57"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="&#268;lánky"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="Marek Kožnar"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="2420"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:UseCase>
+						<UML:Association xmi.id="EAID_27E183F5_E5AD_4582_A5E8_7FD6728AE81F" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="include"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="UseCase"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="subtype" value="Includes"/>
+								<UML:TaggedValue tag="stereotype" value="include"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«include»"/>
+								<UML:TaggedValue tag="ea_localid" value="2122"/>
+								<UML:TaggedValue tag="ea_sourceName" value="CLA.02 Vytvo&#345;it nový &#269;lánek"/>
+								<UML:TaggedValue tag="ea_targetName" value="CLA.03 Nastavit oprávn&#283;ní k &#269;lánku"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_sourceID" value="2421"/>
+								<UML:TaggedValue tag="ea_targetID" value="2420"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={22A5C39E-CC33-4587-8FF4-86108938FF20}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=include;GUID={9DCD8EF2-2012-4105-B90C-1FB46694AB8C};@ENDSTEREO;$DES;$CLT={27E183F5-E5AD-4582-A5E8-7FD6728AE81F}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«include»"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Association.connection>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="false" type="EAID_98B3CA58_9468_4ee4_A98A_44F4D8D365FB">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="source"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_72DB9B69_6B13_4ca1_B28E_039A70E2A607">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="target"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+							</UML:Association.connection>
+						</UML:Association>
+						<UML:UseCase name="CLA.02 Vytvo&#345;it nový &#269;lánek" xmi.id="EAID_98B3CA58_9468_4ee4_A98A_44F4D8D365FB" visibility="public" namespace="EAPK_D87A66D4_A60A_41fc_ADF3_23D5B9128074" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="documentation" value="Vytvo&#345;it nový &#269;lánek.&#xA;"/>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="package" value="EAPK_D87A66D4_A60A_41fc_ADF3_23D5B9128074"/>
+								<UML:TaggedValue tag="date_created" value="2010-10-19 20:32:42"/>
+								<UML:TaggedValue tag="date_modified" value="2010-11-10 12:32:10"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="&#268;lánky"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="Marek Kožnar"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="2421"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:UseCase>
+						<UML:Association xmi.id="EAID_A759B7B1_2AB7_4b63_BE23_ABDE9C549B3F" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Association"/>
+								<UML:TaggedValue tag="direction" value="Unspecified"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="1997"/>
+								<UML:TaggedValue tag="ea_sourceName" value="P&#345;ihlášený uživatel"/>
+								<UML:TaggedValue tag="ea_targetName" value="CLA.02 Vytvo&#345;it nový &#269;lánek"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Actor"/>
+								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_sourceID" value="2354"/>
+								<UML:TaggedValue tag="ea_targetID" value="2421"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={496FDF4F-5821-4ee1-9D4E-B59B693D6D92}$XID;$NAM=CustomProperties$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isDerived@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=false@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={A759B7B1-2AB7-4b63-BE23-ABDE9C549B3F}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="$ea_src_xref_property" value="$XREFPROP=$XID={682ADF59-D0EB-4fb5-A504-8F229F51870F}$XID;$NAM=CustomProperties$NAM;$TYP=connectorSrcEnd property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isComposite@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=isDerivedUnion@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=false@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=default@ENDNAME;@TYPE=String@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=isReadOnly@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=false@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=isDerived@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=false@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=aggregation@ENDNAME;@TYPE=AggregationKind@ENDTYPE;@VALU=none@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={A759B7B1-2AB7-4b63-BE23-ABDE9C549B3F}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="$ea_dst_xref_property" value="$XREFPROP=$XID={8C6A9451-6E8F-4e47-86FC-DB4DA561F01D}$XID;$NAM=CustomProperties$NAM;$TYP=connectorDestEnd property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isComposite@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=isDerivedUnion@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=false@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=default@ENDNAME;@TYPE=String@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=isReadOnly@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=false@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=isDerived@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=false@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=aggregation@ENDNAME;@TYPE=AggregationKind@ENDTYPE;@VALU=none@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={A759B7B1-2AB7-4b63-BE23-ABDE9C549B3F}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Association.connection>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_C47AAE96_4C09_43db_A594_49CF9D54C92A">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+										<UML:TaggedValue tag="ea_end" value="source"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_98B3CA58_9468_4ee4_A98A_44F4D8D365FB">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+										<UML:TaggedValue tag="ea_end" value="target"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+							</UML:Association.connection>
+						</UML:Association>
+						<UML:UseCase name="CLA.05 Smazat &#269;lánek" xmi.id="EAID_C8F190A8_92AC_40a2_8947_4C83E2448274" visibility="public" namespace="EAPK_D87A66D4_A60A_41fc_ADF3_23D5B9128074" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="documentation" value="Smazat &#269;lánek.&#xA;"/>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="package" value="EAPK_D87A66D4_A60A_41fc_ADF3_23D5B9128074"/>
+								<UML:TaggedValue tag="date_created" value="2010-10-19 20:35:39"/>
+								<UML:TaggedValue tag="date_modified" value="2010-11-10 12:32:27"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="&#268;lánky"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="Marek Kožnar"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="2422"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:UseCase>
+						<UML:Association xmi.id="EAID_B005D181_367A_4f11_A23D_EC727E3B7CD4" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Association"/>
+								<UML:TaggedValue tag="direction" value="Unspecified"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="1994"/>
+								<UML:TaggedValue tag="ea_sourceName" value="P&#345;ihlášený uživatel"/>
+								<UML:TaggedValue tag="ea_targetName" value="CLA.05 Smazat &#269;lánek"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Actor"/>
+								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_sourceID" value="2354"/>
+								<UML:TaggedValue tag="ea_targetID" value="2422"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={021F5AB4-9BCB-4510-A748-62E18C28BCA9}$XID;$NAM=CustomProperties$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isDerived@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=false@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={B005D181-367A-4f11-A23D-EC727E3B7CD4}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="$ea_src_xref_property" value="$XREFPROP=$XID={F45C998B-1AA0-4f5b-BF35-844BFA31CB64}$XID;$NAM=CustomProperties$NAM;$TYP=connectorSrcEnd property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isComposite@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=isDerivedUnion@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=false@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=default@ENDNAME;@TYPE=String@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=isReadOnly@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=false@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=isDerived@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=false@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=aggregation@ENDNAME;@TYPE=AggregationKind@ENDTYPE;@VALU=none@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={B005D181-367A-4f11-A23D-EC727E3B7CD4}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="$ea_dst_xref_property" value="$XREFPROP=$XID={432D92A0-0DD6-4453-86E2-65BBCA99A59F}$XID;$NAM=CustomProperties$NAM;$TYP=connectorDestEnd property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=isComposite@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=isDerivedUnion@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=false@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=default@ENDNAME;@TYPE=String@ENDTYPE;@VALU=@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=isReadOnly@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=false@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=isDerived@ENDNAME;@TYPE=Boolean@ENDTYPE;@VALU=false@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;@PROP=@NAME=aggregation@ENDNAME;@TYPE=AggregationKind@ENDTYPE;@VALU=none@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={B005D181-367A-4f11-A23D-EC727E3B7CD4}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Association.connection>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_C47AAE96_4C09_43db_A594_49CF9D54C92A">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+										<UML:TaggedValue tag="ea_end" value="source"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_C8F190A8_92AC_40a2_8947_4C83E2448274">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+										<UML:TaggedValue tag="ea_end" value="target"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+							</UML:Association.connection>
+						</UML:Association>
+						<UML:Collaboration xmi.id="EAID_D87A66D4_A60A_41fc_ADF3_23D5B9128074_Collaboration" name="Collaborations">
+							<UML:Namespace.ownedElement>
+								<UML:ClassifierRole name="SkautSIS" xmi.id="EAID_F266D1D7_FC9D_42eb_92B6_075704526B04" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="isAbstract" value="false"/>
+										<UML:TaggedValue tag="isSpecification" value="false"/>
+										<UML:TaggedValue tag="ea_stype" value="Boundary"/>
+										<UML:TaggedValue tag="ea_ntype" value="0"/>
+										<UML:TaggedValue tag="version" value="1.0"/>
+										<UML:TaggedValue tag="package" value="EAPK_D87A66D4_A60A_41fc_ADF3_23D5B9128074"/>
+										<UML:TaggedValue tag="date_created" value="2010-11-08 13:53:02"/>
+										<UML:TaggedValue tag="date_modified" value="2010-11-08 13:53:10"/>
+										<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+										<UML:TaggedValue tag="tagged" value="0"/>
+										<UML:TaggedValue tag="package_name" value="&#268;lánky"/>
+										<UML:TaggedValue tag="phase" value="1.0"/>
+										<UML:TaggedValue tag="author" value="Marek Kožnar"/>
+										<UML:TaggedValue tag="complexity" value="1"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+										<UML:TaggedValue tag="tpos" value="0"/>
+										<UML:TaggedValue tag="ea_localid" value="2423"/>
+										<UML:TaggedValue tag="ea_eleType" value="element"/>
+										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=3;"/>
+									</UML:ModelElement.taggedValue>
+								</UML:ClassifierRole>
+							</UML:Namespace.ownedElement>
+							<UML:Collaboration.interaction/>
+						</UML:Collaboration>
+						<UML:UseCase name="CLA.07 Smazat p&#345;ílohu ze &#269;lánku" xmi.id="EAID_FD9DB295_9665_4d1d_AD43_C3C35D6E9369" visibility="public" namespace="EAPK_D87A66D4_A60A_41fc_ADF3_23D5B9128074" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="documentation" value="Smazání souborové p&#345;ílohy nahrané ke &#269;lánku.&#xA;"/>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="package" value="EAPK_D87A66D4_A60A_41fc_ADF3_23D5B9128074"/>
+								<UML:TaggedValue tag="date_created" value="2010-11-11 02:59:28"/>
+								<UML:TaggedValue tag="date_modified" value="2010-11-11 02:59:59"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="&#268;lánky"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="Vojta"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="2425"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:UseCase>
+					</UML:Namespace.ownedElement>
+				</UML:Package>
+			</UML:Namespace.ownedElement>
+		</UML:Model>
+		<UML:Diagram name="Wiki" xmi.id="EAID_B33D315A_0510_4770_80F6_ADC27BAC0E57" diagramType="UseCaseDiagram" owner="EAPK_D87A66D4_A60A_41fc_ADF3_23D5B9128074" toolName="Enterprise Architect 2.5">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="version" value="1.0"/>
+				<UML:TaggedValue tag="author" value="Marek Kožnar"/>
+				<UML:TaggedValue tag="created_date" value="2010-10-19 19:55:46"/>
+				<UML:TaggedValue tag="modified_date" value="2010-11-11 03:30:47"/>
+				<UML:TaggedValue tag="package" value="EAPK_D87A66D4_A60A_41fc_ADF3_23D5B9128074"/>
+				<UML:TaggedValue tag="type" value="Use Case"/>
+				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
+				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
+				<UML:TaggedValue tag="ea_localid" value="276"/>
+				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=799;DocSize.cy=1067;ShowDetails=1;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<UML:TaggedValue tag="styleex" value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+			</UML:ModelElement.taggedValue>
+			<UML:Diagram.element>
+				<UML:DiagramElement geometry="Left=466;Top=320;Right=571;Bottom=390;" subject="EAID_FD9DB295_9665_4d1d_AD43_C3C35D6E9369" seqno="1" style="DUID=97211E1C;"/>
+				<UML:DiagramElement geometry="Left=471;Top=238;Right=576;Bottom=308;" subject="EAID_6A9D30DB_B003_4e82_90F9_F98403F73452" seqno="2" style="DUID=431FA216;"/>
+				<UML:DiagramElement geometry="Left=458;Top=136;Right=572;Bottom=212;" subject="EAID_72DB9B69_6B13_4ca1_B28E_039A70E2A607" seqno="3" style="DUID=A72D6415;"/>
+				<UML:DiagramElement geometry="Left=55;Top=120;Right=100;Bottom=210;" subject="EAID_C47AAE96_4C09_43db_A594_49CF9D54C92A" seqno="4" style="DUID=FF7DDFD1;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=54;Top=382;Right=99;Bottom=472;" subject="EAID_0E7809DE_3841_4a99_B69B_6989F8E6258A" seqno="5" style="DUID=B0E5FACF;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=246;Top=283;Right=351;Bottom=353;" subject="EAID_C8F190A8_92AC_40a2_8947_4C83E2448274" seqno="6" style="DUID=F6E9F3B3;"/>
+				<UML:DiagramElement geometry="Left=254;Top=188;Right=359;Bottom=258;" subject="EAID_14DE1B61_CA33_4d13_9B7A_9E34D205891D" seqno="7" style="DUID=E389A191;"/>
+				<UML:DiagramElement geometry="Left=253;Top=38;Right=364;Bottom=112;" subject="EAID_98B3CA58_9468_4ee4_A98A_44F4D8D365FB" seqno="8" style="DUID=D7FCECD3;"/>
+				<UML:DiagramElement geometry="Left=238;Top=391;Right=361;Bottom=473;" subject="EAID_0A6EA621_A87B_449e_94B0_7E61511D964D" seqno="9" style="DUID=9C91E6B5;"/>
+				<UML:DiagramElement geometry="Left=185;Top=17;Right=594;Bottom=519;" subject="EAID_F266D1D7_FC9D_42eb_92B6_075704526B04" seqno="10" style="DUID=4DB54E53;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_037A4CF2_673E_447a_B31E_0F0EEE24DC90" style="Mode=3;EOID=9C91E6B5;SOID=B0E5FACF;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_8A4AD035_BBBF_4e96_97AE_A3393EE93A98" style="Mode=3;EOID=B0E5FACF;SOID=FF7DDFD1;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=CX=46:CY=15:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_E34C4679_8C35_4b8b_85F7_954E22E1BE4F" style="Mode=3;EOID=A72D6415;SOID=E389A191;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=CX=46:CY=15:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_27E183F5_E5AD_4582_A5E8_7FD6728AE81F" style="Mode=3;EOID=A72D6415;SOID=D7FCECD3;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_84101584_4484_49ca_AA5F_51ECFDDC7A6F" style="Mode=3;EOID=E389A191;SOID=FF7DDFD1;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=-3;SY=-11;EX=-3;EY=-11;EDGE=4;$LLB=;LLT=;LMT=;LMB=CX=45:CY=15:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_B7A03263_20FE_46cd_83A8_63CB8E961C19" style="Mode=3;EOID=E389A191;SOID=97211E1C;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=;LLT=;LMT=;LMB=CX=45:CY=15:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_A7CD044C_62DB_46b1_96E6_90B6E64EED6E" style="Mode=3;EOID=E389A191;SOID=431FA216;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_A759B7B1_2AB7_4b63_BE23_ABDE9C549B3F" style="Mode=3;EOID=D7FCECD3;SOID=FF7DDFD1;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_B005D181_367A_4f11_A23D_EC727E3B7CD4" style="Mode=3;EOID=F6E9F3B3;SOID=FF7DDFD1;Color=-1;LWidth=0;Hidden=0;"/>
+			</UML:Diagram.element>
+		</UML:Diagram>
+	</XMI.content>
+	<XMI.difference/>
+	<XMI.extensions xmi.extender="Enterprise Architect 2.5">
+		<EAModel.scenario>
+			<EAScenario name="Hlavní scéná&#345;" type="Basic Path" weight="1,00" description="&lt;b&gt;Vstupní podmínky:&lt;/b&gt;&#xA;Žádné.&#xA;&#xA;&lt;b&gt;Hlavní scéná&#345;:&lt;/b&gt;&#xA;&lt;ol&gt;&#xA;	&lt;li&gt;P&#345;ípad užití za&#269;íná, když uživatel navštíví stránku s &#269;lánkem.&lt;/li&gt;&#xA;	&lt;li&gt;Systém zobrazí &#269;lánek, na jejichž zobrazení má uživatel právo.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&#xA;&lt;b&gt;Výstupní podmínky:&lt;/b&gt;&#xA;Žádné.&#xA;" subject="EAID_0A6EA621_A87B_449e_94B0_7E61511D964D" xmi.id="EAID_56C17920_A241_4d51_BECE_0429438EF9BD"/>
+			<EAScenario name="Hlavní scéná&#345;" type="Basic Path" weight="1,00" description="&lt;b&gt;Vstupní podmínky:&lt;/b&gt;&#xA;&lt;ol&gt;&#xA;	&lt;li&gt;Uživatel je p&#345;ihlášený.&lt;/li&gt;&#xA;	&lt;li&gt;Uživatel je oprávn&#283;n upravit daný &#269;lánek.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&#xA;&lt;b&gt;Hlavní scéná&#345;:&lt;/b&gt;&#xA;&lt;ol&gt;&#xA;	&lt;li&gt;P&#345;ípad užití za&#269;íná, když uživatel aktivuje tla&#269;ítko &quot;Upravit &#269;lánek&quot; vztažené k n&#283;jakému &#269;lánku.&lt;/li&gt;&#xA;	&lt;li&gt;Systém otev&#345;e &#269;lánek ve WISIWYG prost&#345;edí.&lt;/li&gt;&#xA;	&lt;li&gt;Uživatel edituje &#269;lánek.&lt;/li&gt;&#xA;	&lt;li&gt;Zahrnout/Include (Nastavit oprávn&#283;ní k &#269;lánku)&lt;/li&gt;&#xA;	&lt;li&gt;Uživatel aktivuje tla&#269;ítko &quot;Uložit &#269;lánek&quot;.&lt;/li&gt;&#xA;	&lt;li&gt;Systém aktualizuje &#269;lánek v databázi.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&#xA;&lt;b&gt;Výstupní podmínky:&lt;/b&gt;&#xA;&lt;ol&gt;&#xA;	&lt;li&gt;Daný &#269;lánek je aktualizovaný.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&#xA;" subject="EAID_14DE1B61_CA33_4d13_9B7A_9E34D205891D" xmi.id="EAID_B0D8A5B2_36F1_44d4_9142_C857D0F0CCE8"/>
+			<EAScenario name="Hlavní scéná&#345;" type="Basic Path" weight="1,00" description="&lt;b&gt;Vstupní podmínky:&lt;/b&gt;&#xA;&lt;ol&gt;&#xA;	&lt;li&gt;Uživatel je p&#345;ihlášený.&lt;/li&gt;&#xA;	&lt;li&gt;Uživatel má aktivní formulá&#345; p&#345;idání &#269;i editace n&#283;jakého &#269;lánku.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&#xA;&lt;b&gt;Hlavní scéná&#345;:&lt;/b&gt;&#xA;&lt;ol&gt;&#xA;	&lt;li&gt;P&#345;ípad užití za&#269;íná, když je uživatel vyzván k nastavení p&#345;ístupových a edita&#269;ních práv k &#269;lánku.&lt;/li&gt;&#xA;	&lt;li&gt;Dokud uživatel nebude spokojený s nastavením oprávn&#283;ní:&#xA;2.1	Uživatel vybere typ skupiny osob, které chce p&#345;i&#345;adit oprávn&#283;ní.&#xA;2.2	Uživatel vybere skupinu osob, které chce p&#345;i&#345;adit oprávn&#283;ní.&#xA;2.3	Uživatel vybere typy oprávn&#283;ní, které chce vybrané skupin&#283; osob p&#345;i&#345;adit.&#xA;2.4	Uživatel potvrdí výb&#283;r.&#xA;2.5	Systém zaznamená nové p&#345;i&#345;azení oprávn&#283;ní.&lt;/li&gt;&#xA;	&lt;li&gt;Systém zobrazí p&#345;ehled aktuáln&#283; p&#345;i&#345;azených oprávn&#283;ní.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&#xA;&lt;b&gt;Výstupní podmínky:&lt;/b&gt;&#xA;&lt;ol&gt;&#xA;	&lt;li&gt;Systém zná požadovaný soubor p&#345;i&#345;azených oprávn&#283;ní k danému &#269;lánku.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&#xA;" subject="EAID_72DB9B69_6B13_4ca1_B28E_039A70E2A607" xmi.id="EAID_309E8BBB_A136_47bc_A834_1AAE238AF37D"/>
+			<EAScenario name="Odebrat p&#345;i&#345;azené oprávn&#283;ní" type="Alternate" weight="1,00" description="&lt;b&gt;Vstupní podmínky:&lt;/b&gt;&#xA;&lt;ol&gt;&#xA;	&lt;li&gt;Existuje n&#283;jaké p&#345;i&#345;azené oprávn&#283;ní.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&#xA;&lt;b&gt;Hlavní scéná&#345;:&lt;/b&gt;&#xA;&lt;ol&gt;&#xA;	&lt;li&gt;Alternativní scéná&#345; za&#269;íná tehdy, když uživatel vybere jedno nebo více p&#345;i&#345;azení oprávn&#283;ní a aktivuje tla&#269;ítko &quot;Odebrat vybraná oprávn&#283;ní&quot;.&lt;/li&gt;&#xA;	&lt;li&gt;Systém zruší vybraná p&#345;i&#345;azení oprávn&#283;ní.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&#xA;&lt;b&gt;Výstupní podmínky:&lt;/b&gt;&#xA;&lt;ol&gt;&#xA;	&lt;li&gt;Vybraná p&#345;i&#345;azení oprávn&#283;ní se nenachází v souboru p&#345;i&#345;azených oprávn&#283;ní k dané p&#345;íloze.&lt;/li&gt;&#xA;&lt;/ol&gt;" subject="EAID_72DB9B69_6B13_4ca1_B28E_039A70E2A607" xmi.id="EAID_4B5C2249_6C55_4bed_A248_DEC49FA65696"/>
+			<EAScenario name="Hlavní scéná&#345;" type="Basic Path" weight="1,00" description="&lt;b&gt;Vstupní podmínky:&lt;/b&gt;&#xA;&lt;ol&gt;&#xA;	&lt;li&gt;Uživatel je p&#345;ihlášený.&lt;/li&gt;&#xA;	&lt;li&gt;Uživatel je oprávn&#283;n vytvo&#345;it &#269;lánek.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&#xA;&lt;b&gt;Hlavní scéná&#345;:&lt;/b&gt;&#xA;&lt;ol&gt;&#xA;	&lt;li&gt;P&#345;ípad užití za&#269;íná, když uživatel aktivuje tla&#269;ítko &quot;Vytvo&#345;it &#269;lánek&quot;.&lt;/li&gt;&#xA;	&lt;li&gt;Uživatel ve WYSIWYG prost&#345;edí napíše &#269;lánek.&lt;/li&gt;&#xA;	&lt;li&gt;Systém uloží &#269;lánek a zaznamená ho v databázi.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&#xA;&lt;b&gt;Výstupní podmínky:&lt;/b&gt;&#xA;&lt;ol&gt;&#xA;	&lt;li&gt;&#268;lánek je uložen a zaznamenán.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&#xA;" subject="EAID_98B3CA58_9468_4ee4_A98A_44F4D8D365FB" xmi.id="EAID_CBE68553_92E0_42e3_BB50_B6B82F60693A"/>
+			<EAScenario name="Hlavní scéná&#345;" type="Basic Path" weight="1,00" description="&lt;b&gt;Vstupní podmínky:&lt;/b&gt;&#xA;&lt;ol&gt;&#xA;	&lt;li&gt;Uživatel je p&#345;ihlášený.&lt;/li&gt;&#xA;	&lt;li&gt;Uživatel je oprávn&#283;n smazat daný &#269;lánek.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&#xA;&lt;b&gt;Hlavní scéná&#345;:&lt;/b&gt;&#xA;&lt;ol&gt;&#xA;	&lt;li&gt;P&#345;ípad užití za&#269;íná, když uživatel aktivuje tla&#269;ítko &quot;Smazat &#269;lánek&quot; vztažené k n&#283;jakému &#269;lánku.&lt;/li&gt;&#xA;	&lt;li&gt;Systém vyžádá od uživatele potvrzení smazání.&lt;/li&gt;&#xA;	&lt;li&gt;Když uživatel smazání potvrdí, systém &#269;lánek smaže.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&#xA;&lt;b&gt;Výstupní podmínky:&lt;/b&gt;&#xA;&lt;ol&gt;&#xA;	&lt;li&gt;Daný &#269;lánek již v systému neexistuje.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&#xA;" subject="EAID_C8F190A8_92AC_40a2_8947_4C83E2448274" xmi.id="EAID_C2DECA71_C67F_4034_A0ED_6DF709FD8608"/>
+		</EAModel.scenario>
+		<EAStub xmi.id="EAID_0E7809DE_3841_4a99_B69B_6989F8E6258A" name="Návšt&#283;vník" UMLType="Actor"/>
+		<EAStub xmi.id="EAID_C47AAE96_4C09_43db_A594_49CF9D54C92A" name="P&#345;ihlášený uživatel" UMLType="Actor"/>
+	</XMI.extensions>
+</XMI>
