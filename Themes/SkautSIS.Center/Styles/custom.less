@@ -137,18 +137,33 @@
 
     .overlay {
         width: 100%;
-        height: 70px;
         margin: 0;
-        padding: 15px;
+        padding: 0 15px 0 15px;
         background-color: #fff;
         opacity: 0.7;
         filter: alpha(opacity=70);
     }
+
     h1 {
+        font-size: 18px;
+        line-height: 52px;
         margin: 0;
         padding: 0;
+        opacity: initial;
+        filter: initial;
     }
 }
+
+@media (min-width: @screen-sm) {
+    .teaserimage-panorama h1 { font-size: 22px; line-height: 56px; }
+}
+@media (min-width: @screen-md) {
+    .teaserimage-panorama h1 { font-size: 30px; line-height: 64px; }
+}
+@media (min-width: @screen-lg) {
+    .teaserimage-panorama h1 { font-size: 36px; line-height: 70px; }
+}
+
 @media print {
     .teaserimage-panorama {
         margin: 0;
