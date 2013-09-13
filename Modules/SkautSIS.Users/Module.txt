@@ -1,0 +1,12 @@
+﻿Name: SkautSIS.Users
+AntiForgery: enabled
+Author: Vojtěch Vít
+Website: http://skautsis.codeplex.com
+Version: 1.0
+OrchardVersion: 1.7
+Description: Allows federated authentication using SkautIS user accounts.
+Features:
+    SkautSIS.Users:
+        Description: Allows federated authentication using SkautIS user accounts.
+        Dependencies: SkautSIS.Core, Orchard.Users, Orchard.Roles
+        Category: Authentication

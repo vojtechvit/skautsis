@@ -1,9 +1,0 @@
-﻿<h1>@Html.TitleForPage(T("Manage synchronization settings").ToString())</h1>
-@using (Html.BeginFormAntiForgeryPost()) {
-    @Html.ValidationSummary()
-    @Display(Model.Content)
-    <fieldset>
-        <button class="primaryAction" type="submit">@T("Save")</button>
-        <div class="manage">@Html.ActionLink(T("Synchronize SkautSIS").ToString(), "Synchronize", new { }, new { @class = "button primaryAction" })</div>
-    </fieldset>
-}

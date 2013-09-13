@@ -1,0 +1,164 @@
+﻿@using Orchard.ContentManagement;
+@using Orchard.MediaLibrary.Fields;
+@using Vitus.Featured.Models;
+@using System.Linq;
+@functions
+{
+    public class FeaturedSlideShowViewModel
+    {
+        public string ItemUrl { get; set; }
+
+        public string TeaserImageUrl { get; set; }
+
+        public string TeaserImageAlt { get; set; }
+
+        public string FeaturedTitle { get; set; }
+
+        public string FeaturedBody { get; set; }
+    }
+}
+@{
+    var featuredItems = Model.ContentItems;
+}
+@if (featuredItems != null)
+{
+    var viewModel = new List<FeaturedSlideShowViewModel>();
+    
+    foreach (dynamic featuredItem in featuredItems)
+    {
+        FeaturedPart featuredPart = ((IContent)featuredItem).As<FeaturedPart>();
+        var teaserImageField = featuredItem.FeaturedPart.TeaserImage as MediaLibraryPickerField;
+        var teaserImageMedia = teaserImageField.MediaParts.FirstOrDefault();
+
+        viewModel.Add(new FeaturedSlideShowViewModel
+        {
+            ItemUrl = Url.ItemDisplayUrl(featuredPart),
+            TeaserImageUrl = teaserImageMedia != null ? Display.MediaUrl(Path: teaserImageMedia.MediaUrl, Profile: "FeaturedSlideShow").ToString() : null,
+            TeaserImageAlt = teaserImageMedia != null ? teaserImageMedia.AlternateText : null,
+            FeaturedTitle = featuredPart.Title,
+            FeaturedBody = featuredPart.Body
+        });
+    }
+    
+    var active = viewModel.FirstOrDefault();
+
+    if (active != null)
+    {
+
+        <div class="featured-slideshow row">
+            <article id="featured-slideshow-active">
+                <div class="col-xs-12 col-sm-6 col-lg-4" id="featured-slideshow-active-image">
+                    @if (active.TeaserImageUrl != null)
+                    {
+                        <a href="@active.ItemUrl" title="@active.FeaturedTitle"><img class="img-responsive img-thumbnail" src="@active.TeaserImageUrl" alt="@active.TeaserImageAlt" /></a>
+                    }
+                </div>
+                <div class="col-xs-12 col-sm-6 col-lg-4" id="featured-slideshow-active-text">
+                    <a href="@active.ItemUrl" title="@active.FeaturedTitle"><h1>@active.FeaturedTitle</h1></a>
+                    <p>@active.FeaturedBody</p>
+                    <p class="pull-right"><a class="btn" href="@active.ItemUrl" title="Otevřít celý článek">Čtěte dále</a></p>
+                </div>
+            </article>
+    
+            <div class="visible-sm visible-md clearfix"></div>
+
+            <div class="col-xs-12 col-lg-4" id="featured-slideshow-topics">
+                @{ int i = 0; }
+                @foreach (var item in viewModel)
+                {
+                    <article class="col-xs-12 col-sm-6 col-lg-12 featured-slideshow-item @((item == active) ? "active" : "")" data-featured-url="@item.ItemUrl" data-featured-image-url="@item.TeaserImageUrl" data-featured-image-alt="@item.TeaserImageAlt" data-featured-title="@item.FeaturedTitle" data-featured-body="@item.FeaturedBody" title="@item.FeaturedTitle">
+                        <div class="col-xs-4">
+                            @if (item.TeaserImageUrl != null)
+                            {
+                                <img class="img-responsive img-rounded" src="@item.TeaserImageUrl" alt="@item.TeaserImageAlt" />
+                            }
+                        </div>
+                        <div class="col-xs-8">
+                            <h1>@item.FeaturedTitle</h1>
+                        </div>
+                        <div class="clearfix"></div>
+                    </article>
+                    
+                    i++;
+                    if (i % 2 == 0)
+                    {
+                        <div class="visible-sm visible-md clearfix"></div>
+                    }
+                }
+                <p class="pull-right"><a class="btn" href="@Url.Content("~/blog")" title="Blog skautského střediska Lípa Říčany">Více článků na blogu</a></p>
+            </div>
+        </div>
+
+        using (Script.Foot())
+        {
+        <script type="text/javascript">
+        //<![CDATA[
+    
+            (function ($) {
+                var activeContent = $('#featured-slideshow-active');
+                var activeImage = $('#featured-slideshow-active-image');
+                var activeText = $('#featured-slideshow-active-text');
+
+                var imageTemplate = '<a href="{itemUrl}" title="{title}"><img class="img-responsive img-thumbnail" src="{imageUrl}" alt="{imageAlt}" /></a>';
+                var textTemplate = '<a href="{itemUrl}" title="{title}"><h1>{title}</h1></a><p>{body}</p><p class="pull-right"><a class="btn" href="{itemUrl}" title="Otevřít celý článek">Čtěte dále</a></p>';
+
+                $('.featured-slideshow-item')
+            
+                var timeoutId;
+
+                timeoutId = window.setTimeout(nextActive, 6000);
+
+                $(document).on("click", '.featured-slideshow-item', function () {
+                    setActive($(this));
+                    window.clearTimeout(timeoutId);
+                    timeoutId = window.setTimeout(nextActive, 10000);
+                });
+
+                activeContent.click(function () {
+                    window.clearTimeout(timeoutId);
+                    timeoutId = window.setTimeout(nextActive, 10000);
+                });
+
+                function nextActive()
+                {
+                    var active = $('.featured-slideshow-item.active');
+                    var next;
+                    if (active.next('.featured-slideshow-item').length > 0)
+                        next = active.next();
+                    else
+                        next = $('.featured-slideshow-item').first();
+
+                    setActive(next);
+                    timeoutId = window.setTimeout(nextActive, 6000);
+                }
+
+                function setActive(item) {
+                    var itemUrl = item.data('featured-url');
+                    var imageUrl = item.data('featured-image-url');
+                    var imageAlt = item.data('featured-image-alt');
+                    var title = item.data('featured-title');
+                    var body = item.data('featured-body');
+
+                    var imageContentHtml = "";
+
+                    if (imageUrl)
+                        imageContentHtml = imageTemplate.replace(/\{itemUrl\}/g, itemUrl).replace(/\{imageUrl\}/g, imageUrl).replace(/\{imageAlt\}/g, imageAlt).replace(/\{title\}/g, title);
+
+                    var textContentHtml = textTemplate.replace(/\{itemUrl\}/g, itemUrl).replace(/\{title\}/g, title).replace(/\{body\}/g, body);
+
+                    activeContent.fadeOut('300', function () {
+                        activeImage.html(imageContentHtml);
+                        activeText.html(textContentHtml);
+                        activeContent.fadeIn();
+                    });
+                
+                    $('.featured-slideshow-item').removeClass('active');
+                    item.addClass('active');
+                }
+
+            })(jQuery);
+        //]]>
+        </script>
+        }
+    }
+}

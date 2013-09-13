@@ -1,0 +1,38 @@
+@model dynamic
+@using Orchard.ContentManagement;
+@using Orchard.MediaLibrary.Fields;
+@{
+    Layout.Title = Model.Title;
+    string openGraphImageUrl = null;
+
+    if (((IList<ContentPart>)(Model.ContentItem.Parts)).Any(cp => cp.PartDefinition.Name == "FeaturedPart"))
+    {
+        dynamic featuredPart = Model.ContentItem.FeaturedPart;
+        MediaLibraryPickerField teaserImageField = featuredPart.TeaserImage;
+        var teaserMedia = teaserImageField.MediaParts.FirstOrDefault();
+    
+        if (teaserMedia != null)
+        {
+            openGraphImageUrl = Display.MediaUrl(Path: teaserMedia.MediaUrl, Profile: "OpenGraphImage").ToString();
+            string imageUrl = Display.MediaUrl(Path: teaserMedia.MediaUrl, Profile: "FeaturedPanorama").ToString();
+            string imageAlt = teaserMedia.AlternateText;        
+
+            <div class="teaserimage-panorama" style="background-image: url('@imageUrl')">
+                <div class="overlay">
+                    <h1>@Model.Title</h1>
+                </div>
+            </div>
+        }
+        else {
+            <div class="page-header">
+                <h1>@Model.Title</h1>
+            </div>
+        }
+    }
+
+    Display(New.OpenGraphMetas(new {
+            ContentItem = Model.ContentItem,
+            Title = Model.Title,
+            ImageUrl = openGraphImageUrl
+        }));
+}

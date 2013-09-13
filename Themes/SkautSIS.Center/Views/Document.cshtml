@@ -1,0 +1,21 @@
+@using Orchard.Mvc.Html;
+@using Orchard.UI.Resources;
+@{
+    string title = Convert.ToString(Model.Title);
+    string siteName = Convert.ToString(WorkContext.CurrentSite.SiteName);
+
+    string classForPage = Html.ClassForPage().ToString();
+}
+<!DOCTYPE html>
+<html lang="@WorkContext.CurrentCulture" class="@Html.ClassForPage()">
+    <head>
+        <meta charset="utf-8" />
+        <title>@Html.Title(siteName, title)</title>
+        @Display(Model.Head)
+        <script>(function (d) { d.className = "dyn " + d.className.substring(6, d.className.length); })(document.documentElement);</script>
+    </head>
+    <body>
+        @Display(Model.Body)
+        @Display(Model.Tail)
+    </body>
+</html>

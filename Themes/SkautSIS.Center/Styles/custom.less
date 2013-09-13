@@ -1,0 +1,273 @@
+//
+// General Definition Overrides
+
+.navbar {
+    margin-bottom: 0;
+}
+
+//
+// Header
+
+#header {
+    padding-bottom: 5px;
+    border-bottom: 20px @brand-primary solid;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+#brand a, #troops-button a, #join-button a, #navigation-primary a {
+    font-family: @font-family-serif;
+    font-size: @font-size-large;
+    letter-spacing: 2px;
+}
+
+#navigation-primary {
+    padding-left: 0;
+}
+
+@media (max-width: @screen-xs-max) {
+    #user-panel {
+        position: absolute;
+        top: 0;
+        right: 50px;
+        margin: 5px;
+    }
+
+    #navigation-primary {
+        padding-left: 10px;
+    }
+} 
+
+@media (max-width: @screen-sm-max) {
+    #navigation-primary a {
+        padding: 10px; 
+    }
+
+    #brand a, #troops-button a, #join-button a, #navigation-primary a {
+        font-family: @font-family-serif;
+        font-size: @font-size-large;
+        letter-spacing: 1px;
+    }
+}
+
+//
+// Featured
+
+#featured {
+    background-color: @brand-primary;
+    color: #fff;
+    padding-bottom: 20px;
+
+    a {
+        color: #fff;
+    }
+
+    .active {
+        border-color: lighten(@brand-primary, 20%);
+        background-color: lighten(@brand-primary, 20%);
+    }
+
+    .btn {
+        background-color: darken(@brand-primary, 10%);
+        border-color: darken(@brand-primary, 10%);
+    }
+
+    .btn:hover {
+        background-color: darken(@brand-primary, 15%);
+        border-color: darken(@brand-primary, 15%);
+    }
+}
+
+#featured-slideshow-active-text {
+    h1 {
+        font-size: 22px;
+    }
+}
+#featured-slideshow-topics {
+    margin-top: 10px;
+
+    h1 {
+        margin: 0;
+        padding: 0;
+        font-size: @font-size-large;
+    }
+}
+.featured-slideshow-item {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-bottom: 3px;
+}
+.featured-slideshow-item:hover {
+    background-color: lighten(@brand-primary, 10%);
+    cursor: pointer;
+}
+
+//
+// Aside
+
+.aside {
+    .widget {
+        margin-bottom: 10px;
+    }
+}
+
+.zone-aside-first .menu li {
+    margin-bottom: 3px;
+    background-color: @brand-primary;
+    color: #fff;
+}
+.zone-aside-first .menu li.active a {
+    background-color: darken(@brand-primary, 10%);
+}
+.zone-aside-first .menu a:hover,.zone-aside-first .menu a:active {
+    background-color: darken(@brand-primary, 5%);
+}
+
+.zone-aside-first .nav a {
+    color: #fff;
+}
+
+//
+// Teaser Image Panorama
+.teaserimage-panorama {
+    width: 100%;
+    padding: 0;
+    padding-top: 90px;
+    margin-bottom: 10px;
+
+    .overlay {
+        width: 100%;
+        height: 70px;
+        margin: 0;
+        padding: 15px;
+        background-color: #fff;
+        opacity: 0.7;
+        filter: alpha(opacity=70);
+    }
+    h1 {
+        margin: 0;
+        padding: 0;
+    }
+}
+@media print {
+    .teaserimage-panorama {
+        margin: 0;
+        padding: 0;
+
+        .overlay {
+            padding: 0;
+            height: auto;
+        }
+    }
+}
+
+//
+// Content
+#content {
+    margin-top: 20px;
+
+    .page-header {
+        margin-top: 0;
+    }
+}
+@media print {
+    #content { margin: 0; }
+}
+
+//
+// Footer
+
+#footer {
+    color: #fff; 
+    font-size: @font-size-small;
+    background-color: @brand-primary;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+
+    a {
+        color: #fff;
+    }
+
+    .nav a {
+        background: transparent;
+        border: @brand-primary 1px solid;
+    }
+    .nav a:active {
+        background-color: lighten(@brand-primary, 10%);
+    }
+    .nav a:hover {
+        border-color: #fff;
+    }
+}
+
+//
+// Facebook Responsivity
+
+#fb-root {
+    display: none;
+}
+
+.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
+    width: 100% !important;
+}
+
+.zone-aside-first .fb_iframe_widget, .zone-aside-second .fb_iframe_widget {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+/*
+.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
+    width: 100% !important;
+
+    height: 400px !important;
+}
+
+@media (min-width: @screen-tablet) {
+    .fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe, .fb_iframe_widget span iframe[style] {
+        height: 500px !important;
+    }
+}
+
+@media (min-width: @screen-desktop) {
+    .fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe, .fb_iframe_widget span iframe[style] {
+        height: 600px !important;
+    }
+}*/
+
+//
+// Calendar
+
+.fc h2 {
+    font-size: @font-size-large;
+}
+
+.klubovna-svetlusky { border-color: @subbrand-purple !important; background-color: lighten(@subbrand-purple, 30%) !important; color: #000 !important; }
+.klubovna-skauti { border-color: @subbrand-green !important; background-color: lighten(@subbrand-green, 30%) !important; color: #000 !important; }
+.klubovna-skautky { border-color: @subbrand-red !important; background-color: lighten(@subbrand-red, 30%) !important; color: #000 !important; }
+.klubovna-sklep { border-color: @subbrand-navy !important; background-color: lighten(@subbrand-navy, 30%) !important; color: #000 !important; }
+
+.akce-stredisko { border-color: @brand-primary !important; background-color: @brand-primary !important; }
+.akce-1oddil { border-color: @subbrand-blue !important; background-color: @subbrand-blue !important; }
+.akce-2oddil { border-color: @subbrand-red !important; background-color: @subbrand-red !important; }
+.akce-3oddil { border-color: @subbrand-orange !important; background-color: @subbrand-orange !important; }
+.akce-4oddil { border-color: @subbrand-green !important; background-color: @subbrand-green !important; }
+.akce-5oddil { border-color: @subbrand-purple !important; background-color: @subbrand-purple !important; }
+.akce-6oddil { border-color: @subbrand-navy !important; background-color: @subbrand-navy !important; }
+
+//
+// Blog
+ul.tagCloud { list-style: none; }
+li.tagCloud-tag { display: inline; }
+.tagCloud-1 { font-size: 1em; }
+.tagCloud-2 { font-size: 1.1em; }
+.tagCloud-3 { font-size: 1.2em; }
+.tagCloud-4 { font-size: 1.3em; }
+.tagCloud-5 { font-size: 1.4em; }
+
+ul.tagged-posts h1, .blog article h1 { font-size: 30px; }
+
+.archiveMonthList { list-style: none; }
+
+ul.tagged-posts { list-style: none; margin: 0; padding: 0; }

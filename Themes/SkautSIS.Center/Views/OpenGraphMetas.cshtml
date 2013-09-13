@@ -1,0 +1,33 @@
+﻿@model dynamic
+@using Orchard.ContentManagement;
+@{
+    // Model: ContentItem, Title, ImageUrl    
+
+    string title = Convert.ToString(Model.Title);
+    string siteName = Convert.ToString(WorkContext.CurrentSite.SiteName);
+    string url = WorkContext.CurrentSite.BaseUrl + Request.Path;
+}
+@using (Script.Head())
+{
+    <meta property="og:title" content="@Html.Raw(title)" />
+    <meta property="og:site_name" content="@Html.Raw(siteName)" />
+    <meta property="og:locale" content="cs_CZ" />
+    <meta property="og:url" content="@Html.Raw(url)" />
+
+    if (((IContent)(Model.ContentItem)).Is<Vandelay.Industries.Models.MetaPart>())
+    {
+        var metaPart = ((IContent)(Model.ContentItem)).As<Vandelay.Industries.Models.MetaPart>();
+
+        if (HasText(metaPart.Description))
+        {
+    <meta property="og:description" content="@Html.Raw(metaPart.Description)" />
+        }
+    }
+
+    if (Model.ImageUrl != null)
+    {
+        string image = WorkContext.CurrentSite.BaseUrl + Model.ImageUrl;
+    
+    <meta property="og:image" content="@Html.Raw(image)" />
+    }
+}

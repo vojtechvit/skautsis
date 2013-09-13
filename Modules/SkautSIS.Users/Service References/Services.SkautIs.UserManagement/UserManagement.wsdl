@@ -1,0 +1,2897 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://is.skaut.cz/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="https://is.skaut.cz/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Webová služba pro práci s uživateli (zakládání, přidělování rolí, přihlašování apod.)</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://is.skaut.cz/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="RoleAllFunction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="roleAllFunctionInput" type="tns:RoleAllFunctionInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RoleAllFunctionInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_User" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RoleAllFunctionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RoleAllFunctionResult" type="tns:ArrayOfRoleAllFunctionOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRoleAllFunctionOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RoleAllFunctionOutput" nillable="true" type="tns:RoleAllFunctionOutput" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RoleAllFunctionOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Unit" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Unit" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LoginAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loginAllInput" type="tns:LoginAllInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LoginAllInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_ApplicationNotCurrent" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="Count" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotEqual" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Application" nillable="true" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LoginAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginAllResult" type="tns:ArrayOfLoginAllOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLoginAllOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LoginAllOutput" nillable="true" type="tns:LoginAllOutput" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LoginAllOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_User" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateLogin" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Application" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Application" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PersistentIPDetailIsPersitent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="persistentIPDetailInput" type="tns:PersistentIPDetailIsPersitentInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PersistentIPDetailIsPersitentInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PersistentIPDetailIsPersitentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PersistentIPDetailIsPersitentResult" type="tns:PersistentIPDetailIsPersitentOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PersistentIPDetailIsPersitentOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsPersistent" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SettingsAllPublic">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="settingsAllPublicInput" type="tns:SettingsAllPublicInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SettingsAllPublicInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Application" nillable="true" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SettingsAllPublicResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SettingsAllPublicResult" type="tns:ArrayOfSettingsAllPublicOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSettingsAllPublicOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SettingsAllPublicOutput" nillable="true" type="tns:SettingsAllPublicOutput" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SettingsAllPublicOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Note" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GroupMemberApplication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="groupMemberApplicationInput" type="tns:GroupMemberUpdateInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GroupMemberUpdateInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="Grant" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GroupMemberApplicationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="InstanceDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="instanceDetailInput" type="tns:InstanceDetailInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InstanceDetailInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Application" nillable="true" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InstanceDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InstanceDetailResult" type="tns:InstanceDetailOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InstanceDetailOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActual" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SettingsAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="settingsAllInput" type="tns:SettingsAllInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SettingsAllInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SettingsAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SettingsAllResult" type="tns:ArrayOfSettingsAllOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSettingsAllOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SettingsAllOutput" nillable="true" type="tns:SettingsAllOutput" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SettingsAllOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Note" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SettingsDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="settingsDetailInput" type="tns:SettingsDetailInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SettingsDetailInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SettingsDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SettingsDetailResult" type="tns:SettingsItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SettingsItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Note" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SettingsUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="settingsItem" type="tns:SettingsItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SettingsUpdateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="TableArchive">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tableArchiveInput" type="tns:TableArchiveInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TableArchiveInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TableArchiveResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UserRoleUpdateIsActive">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userRole" type="tns:UserRole" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserRole">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_User" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Role" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Group" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserRoleUpdateIsActiveResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UserUpdatePasswordAdmin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userUpdatePasswordAdminInput" type="tns:UserUpdatePasswordAdminInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserUpdatePasswordAdminInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password2" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserUpdatePasswordAdminResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ActionAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="actionAllInput" type="tns:ActionAllInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ActionAllInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_Table" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_TableRelated" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_Operation" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ActionAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActionAllResult" type="tns:ArrayOfActionAllOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfActionAllOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ActionAllOutput" nillable="true" type="tns:ActionAllOutput" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ActionAllOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_Table" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Table" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_TableRelated" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TableRelated" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_Operation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Operation" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequiresRecord" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsAnonymous" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ErrorAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="errorAllInput" type="tns:ErrorAllInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ErrorAllInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_User" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_ErrorType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateFrom" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateTo" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsProcessed" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ErrorAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorAllResult" type="tns:ArrayOfErrorAllOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfErrorAllOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ErrorAllOutput" nillable="true" type="tns:ErrorAllOutput" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ErrorAllOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_User" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Person" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Person" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_ErrorType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Date" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="URL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsProcessed" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Browser" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ErrorDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="errorDetailInput" type="tns:ErrorDetailInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ErrorDetailInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ErrorDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorDetailResult" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Error">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_User" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Person" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Person" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_ErrorType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Date" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="URL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsProcessed" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Browser" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ErrorInsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ErrorInsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorInsertResult" type="tns:ErrorInsertOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ErrorInsertOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ErrorUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ErrorUpdateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GroupTypeAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="groupTypeAllInput" type="tns:GroupTypeAllInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GroupTypeAllInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_Table" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CanLogin" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GroupTypeAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GroupTypeAllResult" type="tns:ArrayOfGroupTypeAllOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGroupTypeAllOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GroupTypeAllOutput" nillable="true" type="tns:GroupTypeAllOutput" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GroupTypeAllOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_Table" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Table" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CanLogin" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LogAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="logAllInput" type="tns:LogAllInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LogAllInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_TableDisplay" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DisplayObjectId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_User" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_Operation" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LogAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogAllResult" type="tns:ArrayOfLogAllOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLogAllOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LogAllOutput" nillable="true" type="tns:LogAllOutput" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LogAllOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_User" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Person" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Person" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Date" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_TableDisplay" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TableDisplay" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DisplayObjectId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_Table" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Table" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_Operation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Operation" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ObjectID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="HistoryObjectId" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LogDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="logDetailInput" type="tns:LogDetailInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LogDetailInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LogDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogDetailResult" type="tns:LogDetailOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LogDetailOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_User" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Person" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Person" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Date" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_TableDisplay" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TableDisplay" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DisplayObjectId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_Table" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Table" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_Operation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Operation" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ObjectID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="HistoryObjectId" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LogDetailHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="logDetailHistoryInput" type="tns:LogDetailHistoryInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LogDetailHistoryInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LogDetailHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogDetailHistoryResult" type="tns:ArrayOfLogDetailHistoryOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLogDetailHistoryOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LogDetailHistoryOutput" nillable="true" type="tns:LogDetailHistoryOutput" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LogDetailHistoryOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OldValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NewValue" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LoginUpdateRefresh">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loginUpdateRefreshInput" type="tns:LoginUpdateRefreshInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LoginUpdateRefreshInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LoginUpdateRefreshResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoginUpdateLogout">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loginUpdateLogoutInput" type="tns:LoginUpdateLogoutInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LoginUpdateLogoutInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LoginUpdateLogoutResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GroupAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="groupAllInput" type="tns:GroupAllInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GroupAllInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GroupAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GroupAllResult" type="tns:ArrayOfGroupAllOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGroupAllOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GroupAllOutput" nillable="true" type="tns:GroupAllOutput" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GroupAllOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LoginUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loginUpdateInput" type="tns:LoginUpdateInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LoginUpdateInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_UserRole" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LoginUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginUpdateResult" type="tns:LoginUpdateOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LoginUpdateOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Unit" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OperationAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="operationAllInput" type="tns:OperationAllInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OperationAllInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OperationAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OperationAllResult" type="tns:ArrayOfOperationAllOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfOperationAllOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OperationAllOutput" nillable="true" type="tns:OperationAllOutput" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OperationAllOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PermissionAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="permissionAllInput" type="tns:PermissionAllInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PermissionAllInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_GroupType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsStatic" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PermissionAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PermissionAllResult" type="tns:ArrayOfPermissionAllOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPermissionAllOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PermissionAllOutput" nillable="true" type="tns:PermissionAllOutput" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PermissionAllOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_GroupType" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ActionVerify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="actionVerifyInput" type="tns:ActionVerifyInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ActionVerifyInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_Table" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_Action" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsRaiseError" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ActionVerifyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActionVerifyResult" type="tns:ArrayOfActionVerifyOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfActionVerifyOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ActionVerifyOutput" nillable="true" type="tns:ActionVerifyOutput" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ActionVerifyOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PermissionAllLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="permissionAllLoginInput" type="tns:PermissionAllLoginInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PermissionAllLoginInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PermissionAllLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PermissionAllLoginResult" type="tns:ArrayOfPermissionAllLoginOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPermissionAllLoginOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PermissionAllLoginOutput" nillable="true" type="tns:PermissionAllLoginOutput" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PermissionAllLoginOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RoleAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="roleAllInput" type="tns:RoleAllInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RoleAllInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_UnitType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_GroupType" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RoleAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RoleAllResult" type="tns:ArrayOfRoleAllOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRoleAllOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RoleAllOutput" nillable="true" type="tns:RoleAllOutput" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RoleAllOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_UnitType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnitType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_GroupType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsHidden" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RoleDelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="roleDeleteInput" type="tns:RoleDeleteInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RoleDeleteInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RoleDeleteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RoleDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="roleDetailInput" type="tns:RoleDetailInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RoleDetailInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RoleDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RoleDetailResult" type="tns:Role" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Role">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_UnitType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnitType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_GroupType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsHidden" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RoleInsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="role" type="tns:Role" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RoleInsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RoleInsertResult" type="tns:RoleInsertOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RoleInsertOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RolePermissionAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rolePermissionAllInput" type="tns:RolePermissionAllInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RolePermissionAllInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Role" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_Permission" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RolePermissionAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RolePermissionAllResult" type="tns:ArrayOfRolePermissionAllOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRolePermissionAllOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RolePermissionAllOutput" nillable="true" type="tns:RolePermissionAllOutput" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RolePermissionAllOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Role" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_Permission" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Permission" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsHierarchic" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RolePermissionDelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rolePermissionDeleteInput" type="tns:RolePermissionDeleteInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RolePermissionDeleteInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RolePermissionDeleteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RolePermissionInsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rolePermission" type="tns:RolePermission" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RolePermission">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Role" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_Permission" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsHierarchic" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RolePermissionInsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RolePermissionInsertResult" type="tns:RolePermissionInsertOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RolePermissionInsertOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RolePermissionUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rolePermission" type="tns:RolePermission" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RolePermissionUpdateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RoleUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="role" type="tns:Role" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RoleUpdateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UserAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userAllInput" type="tns:UserAllInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserAllInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Person" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Unit" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserAllResult" type="tns:ArrayOfUserAllOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUserAllOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UserAllOutput" nillable="true" type="tns:UserAllOutput" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UserAllOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsEnabled" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DatePasswordChange" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IncorrectPasswordCount" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PasswordRequest" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="PasswordRequestTimeout" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Person" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserRoleAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userRoleAllInput" type="tns:UserRoleAllInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserRoleAllInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_User" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Role" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_GroupType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CanEdit" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserRoleAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserRoleAllResult" type="tns:ArrayOfUserRoleAllOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUserRoleAllOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UserRoleAllOutput" nillable="true" type="tns:UserRoleAllOutput" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UserRoleAllOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_User" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Role" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Role" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Group" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Unit" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Unit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CanEdit" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserRoleALLUnit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userRoleALLUnitInput" type="tns:UserRoleALLUnitInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserRoleALLUnitInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Unit" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Role" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserRoleALLUnitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserRoleALLUnitResult" type="tns:ArrayOfUserRoleALLUnitOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUserRoleALLUnitOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UserRoleALLUnitOutput" nillable="true" type="tns:UserRoleALLUnitOutput" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UserRoleALLUnitOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_User" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Person" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Person" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Role" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Role" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserRoleDelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userRoleDeleteInput" type="tns:UserRoleDeleteInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserRoleDeleteInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserRoleDeleteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UserRoleInsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userRole" type="tns:UserRole" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoleInsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserRoleInsertResult" type="tns:UserRoleInsertOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserRoleInsertOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserRoleUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userRole" type="tns:UserRole" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoleUpdateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UserUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userUpdateInput" type="tns:UserUpdateInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserUpdateInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsEnabled" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PasswordActual" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserUpdateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="WeekDayAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="weekDayAllInput" type="tns:WeekDayAllInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WeekDayAllInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WeekDayAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WeekDayAllResult" type="tns:ArrayOfWeekDayAllOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWeekDayAllOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WeekDayAllOutput" nillable="true" type="tns:WeekDayAllOutput" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WeekDayAllOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Note" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LoginInsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loginInsertInput" type="tns:LoginInsertInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LoginInsertInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_UserRole" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Application" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPersistent" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_PersistentLogin" nillable="true" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LoginInsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginInsertResult" type="tns:LoginInsertOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LoginInsertOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_UserRole" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Unit" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_PersistentLogin" nillable="true" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userDetailInput" type="tns:UserDetailInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserDetailInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Login" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserDetailResult" type="tns:UserDetailOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserDetailOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsEnabled" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDebug" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DatePasswordChange" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IncorrectPasswordCount" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PasswordRequest" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="PasswordRequestTimeout" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Person" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecurityCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasMembership" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Person" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserInsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userInsertInput" type="tns:UserInsertInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserInsertInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NickName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_Sex" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Birthday" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserInsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserInsertResult" type="tns:UserInsertOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserInsertOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserPasswordRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userPasswordRequestInput" type="tns:UserPasswordRequestInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserPasswordRequestInput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserPasswordRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserPasswordRequestResult" type="tns:UserPasswordRequestOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserPasswordRequestOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserUpdatePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userUpdatePasswordInput" type="tns:UserUpdatePasswordInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserUpdatePasswordInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PasswordRequest" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserUpdatePasswordResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RoleAllFunctionSoapIn">
+    <wsdl:part name="parameters" element="tns:RoleAllFunction" />
+  </wsdl:message>
+  <wsdl:message name="RoleAllFunctionSoapOut">
+    <wsdl:part name="parameters" element="tns:RoleAllFunctionResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginAllSoapIn">
+    <wsdl:part name="parameters" element="tns:LoginAll" />
+  </wsdl:message>
+  <wsdl:message name="LoginAllSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="PersistentIPDetailIsPersitentSoapIn">
+    <wsdl:part name="parameters" element="tns:PersistentIPDetailIsPersitent" />
+  </wsdl:message>
+  <wsdl:message name="PersistentIPDetailIsPersitentSoapOut">
+    <wsdl:part name="parameters" element="tns:PersistentIPDetailIsPersitentResponse" />
+  </wsdl:message>
+  <wsdl:message name="SettingsAllPublicSoapIn">
+    <wsdl:part name="parameters" element="tns:SettingsAllPublic" />
+  </wsdl:message>
+  <wsdl:message name="SettingsAllPublicSoapOut">
+    <wsdl:part name="parameters" element="tns:SettingsAllPublicResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupMemberApplicationSoapIn">
+    <wsdl:part name="parameters" element="tns:GroupMemberApplication" />
+  </wsdl:message>
+  <wsdl:message name="GroupMemberApplicationSoapOut">
+    <wsdl:part name="parameters" element="tns:GroupMemberApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="InstanceDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:InstanceDetail" />
+  </wsdl:message>
+  <wsdl:message name="InstanceDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:InstanceDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="SettingsAllSoapIn">
+    <wsdl:part name="parameters" element="tns:SettingsAll" />
+  </wsdl:message>
+  <wsdl:message name="SettingsAllSoapOut">
+    <wsdl:part name="parameters" element="tns:SettingsAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="SettingsDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:SettingsDetail" />
+  </wsdl:message>
+  <wsdl:message name="SettingsDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:SettingsDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="SettingsUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:SettingsUpdate" />
+  </wsdl:message>
+  <wsdl:message name="SettingsUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:SettingsUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="TableArchiveSoapIn">
+    <wsdl:part name="parameters" element="tns:TableArchive" />
+  </wsdl:message>
+  <wsdl:message name="TableArchiveSoapOut">
+    <wsdl:part name="parameters" element="tns:TableArchiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleUpdateIsActiveSoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoleUpdateIsActive" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleUpdateIsActiveSoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoleUpdateIsActiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserUpdatePasswordAdminSoapIn">
+    <wsdl:part name="parameters" element="tns:UserUpdatePasswordAdmin" />
+  </wsdl:message>
+  <wsdl:message name="UserUpdatePasswordAdminSoapOut">
+    <wsdl:part name="parameters" element="tns:UserUpdatePasswordAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActionAllSoapIn">
+    <wsdl:part name="parameters" element="tns:ActionAll" />
+  </wsdl:message>
+  <wsdl:message name="ActionAllSoapOut">
+    <wsdl:part name="parameters" element="tns:ActionAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ErrorAllSoapIn">
+    <wsdl:part name="parameters" element="tns:ErrorAll" />
+  </wsdl:message>
+  <wsdl:message name="ErrorAllSoapOut">
+    <wsdl:part name="parameters" element="tns:ErrorAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ErrorDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:ErrorDetail" />
+  </wsdl:message>
+  <wsdl:message name="ErrorDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:ErrorDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ErrorInsertSoapIn">
+    <wsdl:part name="parameters" element="tns:ErrorInsert" />
+  </wsdl:message>
+  <wsdl:message name="ErrorInsertSoapOut">
+    <wsdl:part name="parameters" element="tns:ErrorInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ErrorUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:ErrorUpdate" />
+  </wsdl:message>
+  <wsdl:message name="ErrorUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:ErrorUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupTypeAllSoapIn">
+    <wsdl:part name="parameters" element="tns:GroupTypeAll" />
+  </wsdl:message>
+  <wsdl:message name="GroupTypeAllSoapOut">
+    <wsdl:part name="parameters" element="tns:GroupTypeAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogAllSoapIn">
+    <wsdl:part name="parameters" element="tns:LogAll" />
+  </wsdl:message>
+  <wsdl:message name="LogAllSoapOut">
+    <wsdl:part name="parameters" element="tns:LogAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:LogDetail" />
+  </wsdl:message>
+  <wsdl:message name="LogDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:LogDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogDetailHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:LogDetailHistory" />
+  </wsdl:message>
+  <wsdl:message name="LogDetailHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:LogDetailHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginUpdateRefreshSoapIn">
+    <wsdl:part name="parameters" element="tns:LoginUpdateRefresh" />
+  </wsdl:message>
+  <wsdl:message name="LoginUpdateRefreshSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginUpdateRefreshResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginUpdateLogoutSoapIn">
+    <wsdl:part name="parameters" element="tns:LoginUpdateLogout" />
+  </wsdl:message>
+  <wsdl:message name="LoginUpdateLogoutSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginUpdateLogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupAllSoapIn">
+    <wsdl:part name="parameters" element="tns:GroupAll" />
+  </wsdl:message>
+  <wsdl:message name="GroupAllSoapOut">
+    <wsdl:part name="parameters" element="tns:GroupAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:LoginUpdate" />
+  </wsdl:message>
+  <wsdl:message name="LoginUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="OperationAllSoapIn">
+    <wsdl:part name="parameters" element="tns:OperationAll" />
+  </wsdl:message>
+  <wsdl:message name="OperationAllSoapOut">
+    <wsdl:part name="parameters" element="tns:OperationAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="PermissionAllSoapIn">
+    <wsdl:part name="parameters" element="tns:PermissionAll" />
+  </wsdl:message>
+  <wsdl:message name="PermissionAllSoapOut">
+    <wsdl:part name="parameters" element="tns:PermissionAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActionVerifySoapIn">
+    <wsdl:part name="parameters" element="tns:ActionVerify" />
+  </wsdl:message>
+  <wsdl:message name="ActionVerifySoapOut">
+    <wsdl:part name="parameters" element="tns:ActionVerifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="PermissionAllLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:PermissionAllLogin" />
+  </wsdl:message>
+  <wsdl:message name="PermissionAllLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:PermissionAllLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleAllSoapIn">
+    <wsdl:part name="parameters" element="tns:RoleAll" />
+  </wsdl:message>
+  <wsdl:message name="RoleAllSoapOut">
+    <wsdl:part name="parameters" element="tns:RoleAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleDeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:RoleDelete" />
+  </wsdl:message>
+  <wsdl:message name="RoleDeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:RoleDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:RoleDetail" />
+  </wsdl:message>
+  <wsdl:message name="RoleDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:RoleDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleInsertSoapIn">
+    <wsdl:part name="parameters" element="tns:RoleInsert" />
+  </wsdl:message>
+  <wsdl:message name="RoleInsertSoapOut">
+    <wsdl:part name="parameters" element="tns:RoleInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="RolePermissionAllSoapIn">
+    <wsdl:part name="parameters" element="tns:RolePermissionAll" />
+  </wsdl:message>
+  <wsdl:message name="RolePermissionAllSoapOut">
+    <wsdl:part name="parameters" element="tns:RolePermissionAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="RolePermissionDeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:RolePermissionDelete" />
+  </wsdl:message>
+  <wsdl:message name="RolePermissionDeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:RolePermissionDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="RolePermissionInsertSoapIn">
+    <wsdl:part name="parameters" element="tns:RolePermissionInsert" />
+  </wsdl:message>
+  <wsdl:message name="RolePermissionInsertSoapOut">
+    <wsdl:part name="parameters" element="tns:RolePermissionInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="RolePermissionUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:RolePermissionUpdate" />
+  </wsdl:message>
+  <wsdl:message name="RolePermissionUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:RolePermissionUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:RoleUpdate" />
+  </wsdl:message>
+  <wsdl:message name="RoleUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:RoleUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserAllSoapIn">
+    <wsdl:part name="parameters" element="tns:UserAll" />
+  </wsdl:message>
+  <wsdl:message name="UserAllSoapOut">
+    <wsdl:part name="parameters" element="tns:UserAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleAllSoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoleAll" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleAllSoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoleAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleALLUnitSoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoleALLUnit" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleALLUnitSoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoleALLUnitResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleDeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoleDelete" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleDeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoleDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleInsertSoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoleInsert" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleInsertSoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoleInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoleUpdate" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoleUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:UserUpdate" />
+  </wsdl:message>
+  <wsdl:message name="UserUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:UserUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="WeekDayAllSoapIn">
+    <wsdl:part name="parameters" element="tns:WeekDayAll" />
+  </wsdl:message>
+  <wsdl:message name="WeekDayAllSoapOut">
+    <wsdl:part name="parameters" element="tns:WeekDayAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginInsertSoapIn">
+    <wsdl:part name="parameters" element="tns:LoginInsert" />
+  </wsdl:message>
+  <wsdl:message name="LoginInsertSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:UserDetail" />
+  </wsdl:message>
+  <wsdl:message name="UserDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:UserDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserInsertSoapIn">
+    <wsdl:part name="parameters" element="tns:UserInsert" />
+  </wsdl:message>
+  <wsdl:message name="UserInsertSoapOut">
+    <wsdl:part name="parameters" element="tns:UserInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserPasswordRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:UserPasswordRequest" />
+  </wsdl:message>
+  <wsdl:message name="UserPasswordRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:UserPasswordRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserUpdatePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:UserUpdatePassword" />
+  </wsdl:message>
+  <wsdl:message name="UserUpdatePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:UserUpdatePasswordResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UserManagementSoap">
+    <wsdl:operation name="RoleAllFunction">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Načíst seznam vhodných rolí podle funkcí</wsdl:documentation>
+      <wsdl:input message="tns:RoleAllFunctionSoapIn" />
+      <wsdl:output message="tns:RoleAllFunctionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Načíst seznam přihlášení</wsdl:documentation>
+      <wsdl:input message="tns:LoginAllSoapIn" />
+      <wsdl:output message="tns:LoginAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PersistentIPDetailIsPersitent">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Zda se nemá z IP odhlašovat</wsdl:documentation>
+      <wsdl:input message="tns:PersistentIPDetailIsPersitentSoapIn" />
+      <wsdl:output message="tns:PersistentIPDetailIsPersitentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SettingsAllPublic">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Načíst seznam Nastavení</wsdl:documentation>
+      <wsdl:input message="tns:SettingsAllPublicSoapIn" />
+      <wsdl:output message="tns:SettingsAllPublicSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupMemberApplication">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Přidá/odebere přihlášeného uživatele do skupiny aplikace</wsdl:documentation>
+      <wsdl:input message="tns:GroupMemberApplicationSoapIn" />
+      <wsdl:output message="tns:GroupMemberApplicationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InstanceDetail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Načíst detail instance skautISu</wsdl:documentation>
+      <wsdl:input message="tns:InstanceDetailSoapIn" />
+      <wsdl:output message="tns:InstanceDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SettingsAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Načíst seznam Nastavení</wsdl:documentation>
+      <wsdl:input message="tns:SettingsAllSoapIn" />
+      <wsdl:output message="tns:SettingsAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SettingsDetail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Načíst detail Nastavení</wsdl:documentation>
+      <wsdl:input message="tns:SettingsDetailSoapIn" />
+      <wsdl:output message="tns:SettingsDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SettingsUpdate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Upravit </wsdl:documentation>
+      <wsdl:input message="tns:SettingsUpdateSoapIn" />
+      <wsdl:output message="tns:SettingsUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TableArchive">
+      <wsdl:input message="tns:TableArchiveSoapIn" />
+      <wsdl:output message="tns:TableArchiveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleUpdateIsActive">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Změnit viditelnost role</wsdl:documentation>
+      <wsdl:input message="tns:UserRoleUpdateIsActiveSoapIn" />
+      <wsdl:output message="tns:UserRoleUpdateIsActiveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserUpdatePasswordAdmin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Změnit heslo administrátorem</wsdl:documentation>
+      <wsdl:input message="tns:UserUpdatePasswordAdminSoapIn" />
+      <wsdl:output message="tns:UserUpdatePasswordAdminSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActionAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Načíst seznam akcí</wsdl:documentation>
+      <wsdl:input message="tns:ActionAllSoapIn" />
+      <wsdl:output message="tns:ActionAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ErrorAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Načíst seznam chyb</wsdl:documentation>
+      <wsdl:input message="tns:ErrorAllSoapIn" />
+      <wsdl:output message="tns:ErrorAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ErrorDetail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Načíst detail chyby</wsdl:documentation>
+      <wsdl:input message="tns:ErrorDetailSoapIn" />
+      <wsdl:output message="tns:ErrorDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ErrorInsert">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Založit chybu</wsdl:documentation>
+      <wsdl:input message="tns:ErrorInsertSoapIn" />
+      <wsdl:output message="tns:ErrorInsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ErrorUpdate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Upravit chybu</wsdl:documentation>
+      <wsdl:input message="tns:ErrorUpdateSoapIn" />
+      <wsdl:output message="tns:ErrorUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupTypeAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Načíst seznam typů skupin</wsdl:documentation>
+      <wsdl:input message="tns:GroupTypeAllSoapIn" />
+      <wsdl:output message="tns:GroupTypeAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Načíst seznam položek logu</wsdl:documentation>
+      <wsdl:input message="tns:LogAllSoapIn" />
+      <wsdl:output message="tns:LogAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogDetail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Načíst detail logu</wsdl:documentation>
+      <wsdl:input message="tns:LogDetailSoapIn" />
+      <wsdl:output message="tns:LogDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogDetailHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Načíst změněné vlastnosti</wsdl:documentation>
+      <wsdl:input message="tns:LogDetailHistorySoapIn" />
+      <wsdl:output message="tns:LogDetailHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginUpdateRefresh">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Prodloužení platnosti přihlašovacího tokenu o 30 minut</wsdl:documentation>
+      <wsdl:input message="tns:LoginUpdateRefreshSoapIn" />
+      <wsdl:output message="tns:LoginUpdateRefreshSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginUpdateLogout">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Odhlášení uživatele</wsdl:documentation>
+      <wsdl:input message="tns:LoginUpdateLogoutSoapIn" />
+      <wsdl:output message="tns:LoginUpdateLogoutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Načíst seznam skupin</wsdl:documentation>
+      <wsdl:input message="tns:GroupAllSoapIn" />
+      <wsdl:output message="tns:GroupAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginUpdate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Přihlášení uživatele na jinou roli</wsdl:documentation>
+      <wsdl:input message="tns:LoginUpdateSoapIn" />
+      <wsdl:output message="tns:LoginUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OperationAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Načíst seznam operací</wsdl:documentation>
+      <wsdl:input message="tns:OperationAllSoapIn" />
+      <wsdl:output message="tns:OperationAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PermissionAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Načíst seznam oprávnění</wsdl:documentation>
+      <wsdl:input message="tns:PermissionAllSoapIn" />
+      <wsdl:output message="tns:PermissionAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActionVerify">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Vrátí seznam akcí, které může přihlášený uživatele vyvolat pro zadaný záznam</wsdl:documentation>
+      <wsdl:input message="tns:ActionVerifySoapIn" />
+      <wsdl:output message="tns:ActionVerifySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PermissionAllLogin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Vrátí seznam oprávnění přhlášeného uživatele</wsdl:documentation>
+      <wsdl:input message="tns:PermissionAllLoginSoapIn" />
+      <wsdl:output message="tns:PermissionAllLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RoleAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Načíst seznam rolí</wsdl:documentation>
+      <wsdl:input message="tns:RoleAllSoapIn" />
+      <wsdl:output message="tns:RoleAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RoleDelete">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Smazat roli</wsdl:documentation>
+      <wsdl:input message="tns:RoleDeleteSoapIn" />
+      <wsdl:output message="tns:RoleDeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RoleDetail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Načíst detail role</wsdl:documentation>
+      <wsdl:input message="tns:RoleDetailSoapIn" />
+      <wsdl:output message="tns:RoleDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RoleInsert">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Založit roli</wsdl:documentation>
+      <wsdl:input message="tns:RoleInsertSoapIn" />
+      <wsdl:output message="tns:RoleInsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RolePermissionAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Načíst seznam práv přiřazených do role</wsdl:documentation>
+      <wsdl:input message="tns:RolePermissionAllSoapIn" />
+      <wsdl:output message="tns:RolePermissionAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RolePermissionDelete">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Odebrat právo z role</wsdl:documentation>
+      <wsdl:input message="tns:RolePermissionDeleteSoapIn" />
+      <wsdl:output message="tns:RolePermissionDeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RolePermissionInsert">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Přidat právo do role</wsdl:documentation>
+      <wsdl:input message="tns:RolePermissionInsertSoapIn" />
+      <wsdl:output message="tns:RolePermissionInsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RolePermissionUpdate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Upravit přiřazení práva do role</wsdl:documentation>
+      <wsdl:input message="tns:RolePermissionUpdateSoapIn" />
+      <wsdl:output message="tns:RolePermissionUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RoleUpdate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Upravit roli</wsdl:documentation>
+      <wsdl:input message="tns:RoleUpdateSoapIn" />
+      <wsdl:output message="tns:RoleUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Načíst seznam uživatelů</wsdl:documentation>
+      <wsdl:input message="tns:UserAllSoapIn" />
+      <wsdl:output message="tns:UserAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Načíst seznam rolí přiřazených uživateli</wsdl:documentation>
+      <wsdl:input message="tns:UserRoleAllSoapIn" />
+      <wsdl:output message="tns:UserRoleAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleALLUnit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Načíst seznam obsazení rolí v jednotce</wsdl:documentation>
+      <wsdl:input message="tns:UserRoleALLUnitSoapIn" />
+      <wsdl:output message="tns:UserRoleALLUnitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleDelete">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Odebrat uživateli roli</wsdl:documentation>
+      <wsdl:input message="tns:UserRoleDeleteSoapIn" />
+      <wsdl:output message="tns:UserRoleDeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleInsert">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Přidat uživateli roli</wsdl:documentation>
+      <wsdl:input message="tns:UserRoleInsertSoapIn" />
+      <wsdl:output message="tns:UserRoleInsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleUpdate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Upravit roli uživatele</wsdl:documentation>
+      <wsdl:input message="tns:UserRoleUpdateSoapIn" />
+      <wsdl:output message="tns:UserRoleUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserUpdate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Upravit uživatele</wsdl:documentation>
+      <wsdl:input message="tns:UserUpdateSoapIn" />
+      <wsdl:output message="tns:UserUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WeekDayAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Načíst seznam dnů v týdnu</wsdl:documentation>
+      <wsdl:input message="tns:WeekDayAllSoapIn" />
+      <wsdl:output message="tns:WeekDayAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginInsert">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Přihlášení uživatele</wsdl:documentation>
+      <wsdl:input message="tns:LoginInsertSoapIn" />
+      <wsdl:output message="tns:LoginInsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserDetail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Načtení informací o uživateli</wsdl:documentation>
+      <wsdl:input message="tns:UserDetailSoapIn" />
+      <wsdl:output message="tns:UserDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserInsert">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registrace uživatele</wsdl:documentation>
+      <wsdl:input message="tns:UserInsertSoapIn" />
+      <wsdl:output message="tns:UserInsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserPasswordRequest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Žádost o zaslání e-mailu při ztrátě hesla</wsdl:documentation>
+      <wsdl:input message="tns:UserPasswordRequestSoapIn" />
+      <wsdl:output message="tns:UserPasswordRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserUpdatePassword">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Změna zapomenutého hesla pomocí jedinečného identifikátoru</wsdl:documentation>
+      <wsdl:input message="tns:UserUpdatePasswordSoapIn" />
+      <wsdl:output message="tns:UserUpdatePasswordSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UserManagementSoap" type="tns:UserManagementSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RoleAllFunction">
+      <soap:operation soapAction="https://is.skaut.cz/RoleAllFunction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginAll">
+      <soap:operation soapAction="https://is.skaut.cz/LoginAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PersistentIPDetailIsPersitent">
+      <soap:operation soapAction="https://is.skaut.cz/PersistentIPDetailIsPersitent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SettingsAllPublic">
+      <soap:operation soapAction="https://is.skaut.cz/SettingsAllPublic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupMemberApplication">
+      <soap:operation soapAction="https://is.skaut.cz/GroupMemberApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InstanceDetail">
+      <soap:operation soapAction="https://is.skaut.cz/InstanceDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SettingsAll">
+      <soap:operation soapAction="https://is.skaut.cz/SettingsAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SettingsDetail">
+      <soap:operation soapAction="https://is.skaut.cz/SettingsDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SettingsUpdate">
+      <soap:operation soapAction="https://is.skaut.cz/SettingsUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TableArchive">
+      <soap:operation soapAction="https://is.skaut.cz/TableArchive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleUpdateIsActive">
+      <soap:operation soapAction="https://is.skaut.cz/UserRoleUpdateIsActive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserUpdatePasswordAdmin">
+      <soap:operation soapAction="https://is.skaut.cz/UserUpdatePasswordAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActionAll">
+      <soap:operation soapAction="https://is.skaut.cz/ActionAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ErrorAll">
+      <soap:operation soapAction="https://is.skaut.cz/ErrorAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ErrorDetail">
+      <soap:operation soapAction="https://is.skaut.cz/ErrorDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ErrorInsert">
+      <soap:operation soapAction="https://is.skaut.cz/ErrorInsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ErrorUpdate">
+      <soap:operation soapAction="https://is.skaut.cz/ErrorUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupTypeAll">
+      <soap:operation soapAction="https://is.skaut.cz/GroupTypeAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogAll">
+      <soap:operation soapAction="https://is.skaut.cz/LogAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogDetail">
+      <soap:operation soapAction="https://is.skaut.cz/LogDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogDetailHistory">
+      <soap:operation soapAction="https://is.skaut.cz/LogDetailHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginUpdateRefresh">
+      <soap:operation soapAction="https://is.skaut.cz/LoginUpdateRefresh" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginUpdateLogout">
+      <soap:operation soapAction="https://is.skaut.cz/LoginUpdateLogout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupAll">
+      <soap:operation soapAction="https://is.skaut.cz/GroupAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginUpdate">
+      <soap:operation soapAction="https://is.skaut.cz/LoginUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OperationAll">
+      <soap:operation soapAction="https://is.skaut.cz/OperationAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PermissionAll">
+      <soap:operation soapAction="https://is.skaut.cz/PermissionAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActionVerify">
+      <soap:operation soapAction="https://is.skaut.cz/ActionVerify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PermissionAllLogin">
+      <soap:operation soapAction="https://is.skaut.cz/PermissionAllLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoleAll">
+      <soap:operation soapAction="https://is.skaut.cz/RoleAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoleDelete">
+      <soap:operation soapAction="https://is.skaut.cz/RoleDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoleDetail">
+      <soap:operation soapAction="https://is.skaut.cz/RoleDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoleInsert">
+      <soap:operation soapAction="https://is.skaut.cz/RoleInsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolePermissionAll">
+      <soap:operation soapAction="https://is.skaut.cz/RolePermissionAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolePermissionDelete">
+      <soap:operation soapAction="https://is.skaut.cz/RolePermissionDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolePermissionInsert">
+      <soap:operation soapAction="https://is.skaut.cz/RolePermissionInsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolePermissionUpdate">
+      <soap:operation soapAction="https://is.skaut.cz/RolePermissionUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoleUpdate">
+      <soap:operation soapAction="https://is.skaut.cz/RoleUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAll">
+      <soap:operation soapAction="https://is.skaut.cz/UserAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleAll">
+      <soap:operation soapAction="https://is.skaut.cz/UserRoleAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleALLUnit">
+      <soap:operation soapAction="https://is.skaut.cz/UserRoleALLUnit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleDelete">
+      <soap:operation soapAction="https://is.skaut.cz/UserRoleDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleInsert">
+      <soap:operation soapAction="https://is.skaut.cz/UserRoleInsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleUpdate">
+      <soap:operation soapAction="https://is.skaut.cz/UserRoleUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserUpdate">
+      <soap:operation soapAction="https://is.skaut.cz/UserUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WeekDayAll">
+      <soap:operation soapAction="https://is.skaut.cz/WeekDayAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginInsert">
+      <soap:operation soapAction="https://is.skaut.cz/LoginInsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDetail">
+      <soap:operation soapAction="https://is.skaut.cz/UserDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserInsert">
+      <soap:operation soapAction="https://is.skaut.cz/UserInsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserPasswordRequest">
+      <soap:operation soapAction="https://is.skaut.cz/UserPasswordRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserUpdatePassword">
+      <soap:operation soapAction="https://is.skaut.cz/UserUpdatePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UserManagementSoap12" type="tns:UserManagementSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RoleAllFunction">
+      <soap12:operation soapAction="https://is.skaut.cz/RoleAllFunction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginAll">
+      <soap12:operation soapAction="https://is.skaut.cz/LoginAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PersistentIPDetailIsPersitent">
+      <soap12:operation soapAction="https://is.skaut.cz/PersistentIPDetailIsPersitent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SettingsAllPublic">
+      <soap12:operation soapAction="https://is.skaut.cz/SettingsAllPublic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupMemberApplication">
+      <soap12:operation soapAction="https://is.skaut.cz/GroupMemberApplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InstanceDetail">
+      <soap12:operation soapAction="https://is.skaut.cz/InstanceDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SettingsAll">
+      <soap12:operation soapAction="https://is.skaut.cz/SettingsAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SettingsDetail">
+      <soap12:operation soapAction="https://is.skaut.cz/SettingsDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SettingsUpdate">
+      <soap12:operation soapAction="https://is.skaut.cz/SettingsUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TableArchive">
+      <soap12:operation soapAction="https://is.skaut.cz/TableArchive" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleUpdateIsActive">
+      <soap12:operation soapAction="https://is.skaut.cz/UserRoleUpdateIsActive" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserUpdatePasswordAdmin">
+      <soap12:operation soapAction="https://is.skaut.cz/UserUpdatePasswordAdmin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActionAll">
+      <soap12:operation soapAction="https://is.skaut.cz/ActionAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ErrorAll">
+      <soap12:operation soapAction="https://is.skaut.cz/ErrorAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ErrorDetail">
+      <soap12:operation soapAction="https://is.skaut.cz/ErrorDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ErrorInsert">
+      <soap12:operation soapAction="https://is.skaut.cz/ErrorInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ErrorUpdate">
+      <soap12:operation soapAction="https://is.skaut.cz/ErrorUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupTypeAll">
+      <soap12:operation soapAction="https://is.skaut.cz/GroupTypeAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogAll">
+      <soap12:operation soapAction="https://is.skaut.cz/LogAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogDetail">
+      <soap12:operation soapAction="https://is.skaut.cz/LogDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogDetailHistory">
+      <soap12:operation soapAction="https://is.skaut.cz/LogDetailHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginUpdateRefresh">
+      <soap12:operation soapAction="https://is.skaut.cz/LoginUpdateRefresh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginUpdateLogout">
+      <soap12:operation soapAction="https://is.skaut.cz/LoginUpdateLogout" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupAll">
+      <soap12:operation soapAction="https://is.skaut.cz/GroupAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginUpdate">
+      <soap12:operation soapAction="https://is.skaut.cz/LoginUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OperationAll">
+      <soap12:operation soapAction="https://is.skaut.cz/OperationAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PermissionAll">
+      <soap12:operation soapAction="https://is.skaut.cz/PermissionAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActionVerify">
+      <soap12:operation soapAction="https://is.skaut.cz/ActionVerify" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PermissionAllLogin">
+      <soap12:operation soapAction="https://is.skaut.cz/PermissionAllLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoleAll">
+      <soap12:operation soapAction="https://is.skaut.cz/RoleAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoleDelete">
+      <soap12:operation soapAction="https://is.skaut.cz/RoleDelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoleDetail">
+      <soap12:operation soapAction="https://is.skaut.cz/RoleDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoleInsert">
+      <soap12:operation soapAction="https://is.skaut.cz/RoleInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolePermissionAll">
+      <soap12:operation soapAction="https://is.skaut.cz/RolePermissionAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolePermissionDelete">
+      <soap12:operation soapAction="https://is.skaut.cz/RolePermissionDelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolePermissionInsert">
+      <soap12:operation soapAction="https://is.skaut.cz/RolePermissionInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolePermissionUpdate">
+      <soap12:operation soapAction="https://is.skaut.cz/RolePermissionUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoleUpdate">
+      <soap12:operation soapAction="https://is.skaut.cz/RoleUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAll">
+      <soap12:operation soapAction="https://is.skaut.cz/UserAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleAll">
+      <soap12:operation soapAction="https://is.skaut.cz/UserRoleAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleALLUnit">
+      <soap12:operation soapAction="https://is.skaut.cz/UserRoleALLUnit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleDelete">
+      <soap12:operation soapAction="https://is.skaut.cz/UserRoleDelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleInsert">
+      <soap12:operation soapAction="https://is.skaut.cz/UserRoleInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleUpdate">
+      <soap12:operation soapAction="https://is.skaut.cz/UserRoleUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserUpdate">
+      <soap12:operation soapAction="https://is.skaut.cz/UserUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WeekDayAll">
+      <soap12:operation soapAction="https://is.skaut.cz/WeekDayAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginInsert">
+      <soap12:operation soapAction="https://is.skaut.cz/LoginInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDetail">
+      <soap12:operation soapAction="https://is.skaut.cz/UserDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserInsert">
+      <soap12:operation soapAction="https://is.skaut.cz/UserInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserPasswordRequest">
+      <soap12:operation soapAction="https://is.skaut.cz/UserPasswordRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserUpdatePassword">
+      <soap12:operation soapAction="https://is.skaut.cz/UserUpdatePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserManagement">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Webová služba pro práci s uživateli (zakládání, přidělování rolí, přihlašování apod.)</wsdl:documentation>
+    <wsdl:port name="UserManagementSoap" binding="tns:UserManagementSoap">
+      <soap:address location="http://test-is.skaut.cz/JunakWebservice/UserManagement.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UserManagementSoap12" binding="tns:UserManagementSoap12">
+      <soap12:address location="http://test-is.skaut.cz/JunakWebservice/UserManagement.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

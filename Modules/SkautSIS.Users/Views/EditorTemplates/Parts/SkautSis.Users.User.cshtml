@@ -1,0 +1,25 @@
+﻿@model SkautSIS.Users.ViewModels.EditSkautIsUserViewModel
+@if (Model.UserPart.SkautIsUserId.HasValue)
+{
+    <fieldset>
+        <legend>@T("SkautIS Information")</legend>
+
+        <fieldset>
+            @Html.LabelFor(m => m.UserPart.SkautIsUserName, T("SkautIS Username"))
+            @Html.TextBoxFor(m => m.UserPart.SkautIsUserName, new { @class = "textMedium", disabled = "disabled" })
+        </fieldset>
+
+        <fieldset>
+            <label>@T("Full name")</label>
+            <input type="text" class="textMedium" disabled="disabled" value="@Model.UserPart.LastName @Model.UserPart.FirstName @if (HasText(Model.UserPart.NickName)) { <text>(@Model.UserPart.NickName)</text> }" />
+        </fieldset>
+
+        @if (Model.UserPart.BirthDate.HasValue)
+        {
+            <fieldset>
+                <label>@T("Birthdate")</label>
+                <input type="text" class="textMedium" disabled="disabled" value="@Display(New.DateTime(Model.UserPart.BirthDate.Value, Model.DateTimeLocalization.ShortDateFormat))" />
+            </fieldset>
+        }
+    </fieldset>
+}

@@ -1,0 +1,61 @@
+@model SkautSIS.Users.ViewModels.EditSkautSisUsersSettingsViewModel
+
+<fieldset>
+    <legend>@T("SkautSIS Users Settings")</legend>
+    @if (Model.SkautIsUserNeeded)
+    {
+        <p class="warning">@T("You need to sign in using a SkautIS account in order to change these settings.")</p>
+    }
+    else
+    {
+        <div>
+            @Html.LabelFor(m => m.SettingsPart.RolesAssignedByMembership, T("Membership based role assignments"))
+            @Html.TextBoxFor(m => m.SettingsPart.RolesAssignedByMembership, new { @class = "textMedium" })
+            @Html.ValidationMessageFor(m => m.SettingsPart.RolesAssignedByMembership, "*")
+            <span class="hint">@T("Comma separated list of role names that will be assigned to members of Junák.")</span>
+        </div>
+        
+        <div>
+            @Html.LabelFor(m => m.SettingsPart.RolesAssignedBySkautIsRoles, T("SkautIS roles based role assignments"))
+            @Html.TextBoxFor(m => m.SettingsPart.RolesAssignedBySkautIsRoles, new { @class = "textMedium" })
+            @Html.ValidationMessageFor(m => m.SettingsPart.RolesAssignedBySkautIsRoles, "*")
+            <span class="hint">@T("Comma separated list of \"SkautIsRoleId:WebsiteRoleName:WebsiteRoleName:WebsiteRoleName...\" strings that determine website roles assigned to members of Junák based on their SkautIS roles in the organizational unit that owns the website.")</span>
+        </div>
+        
+        <table class="table">
+            <caption>@T("Local Roles")</caption>
+            <thead>
+                <tr>
+                    <th>@T("Name")</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var role in Model.LocalRoles)
+                { 
+                    <tr>
+                        <td>@role.Text</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        
+        <table class="table">
+            <caption>@T("SkautIS Roles")</caption>
+            <thead>
+                <tr>
+                    <th>@T("Id")</th>
+                    <th>@T("Name")</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var role in Model.SkautIsRoles)
+                { 
+                    <tr>
+                        <td>@role.Value</td>
+                        <td>@role.Text</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</fieldset>

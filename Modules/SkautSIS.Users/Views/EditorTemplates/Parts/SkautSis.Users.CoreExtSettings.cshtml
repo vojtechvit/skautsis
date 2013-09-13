@@ -1,0 +1,17 @@
+@model SkautSIS.Users.ViewModels.EditSkautSisCoreExtSettingsViewModel
+
+<fieldset>
+    <legend>@T("SkautSIS Extended Settings")</legend>
+    @if (Model.SkautIsUserNeeded)
+    {
+        <p class="warning">@T("You need to sign in using a SkautIS account in order to change these settings.")</p>
+    }
+    else
+    {
+        <div>
+            @Html.LabelFor(m => m.ExtSettingsPart.UnitTypeId, T("Unit Type Id"))
+            @Html.TextBoxFor(m => m.ExtSettingsPart.UnitTypeId, new { @class = "textMedium", disabled="disabled" })
+            <span class="hint">@T("Id of the type of the organizational unit that this site belongs to.")</span>
+        </div>
+    }
+</fieldset>

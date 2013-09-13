@@ -1,0 +1,250 @@
+# Orchard resource strings - cs-CZ
+# Copyright (c) 2013 Junák - svaz skautů a skautek ČR
+# All rights reserved
+# This file is distributed under the BSD license
+
+#: SkautSIS.Users.Controllers.AccountController
+#| msgid "You have been logged out due to inactivity."
+msgctxt "SkautSIS.Users.Controllers.AccountController"
+msgid "You have been logged out due to inactivity."
+msgstr "Byl(a) jste odhlášen(a) v důsledku neaktivity."
+
+#: SkautSIS.Users.Controllers.AccountController
+#| msgid "Logon was unsuccessful."
+msgctxt "SkautSIS.Users.Controllers.AccountController"
+msgid "Logon was unsuccessful."
+msgstr "Přihlášení nebylo úspěšné."
+
+#: SkautSIS.Users.Handlers.SkautSisCoreExtSettingsPartHandler
+#| msgid "SkautSIS"
+msgctxt "SkautSIS.Users.Handlers.SkautSisCoreExtSettingsPartHandler"
+msgid "SkautSIS"
+msgstr "SkautSIS"
+
+#: SkautSIS.Users.Handlers.SkautSisUsersSettingsPartHandler
+#| msgid "SkautSIS Users"
+msgctxt "SkautSIS.Users.Handlers.SkautSisUsersSettingsPartHandler"
+msgid "SkautSIS Users"
+msgstr "SkautSIS Uživatelé"
+
+#: SkautSIS.Users.Services.SkautIsUserService
+#| msgid "Auto Registered User"
+msgctxt "SkautSIS.Users.Services.SkautIsUserService"
+msgid "Auto Registered User"
+msgstr "Automaticky registrovaný uživatel"
+
+#: ~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.CoreExtSettings.cshtml
+#| msgid "SkautSIS Extended Settings"
+msgctxt "~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.CoreExtSettings.cshtml"
+msgid "SkautSIS Extended Settings"
+msgstr "Rozšířená nastavení SkautSISu"
+
+#: ~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.CoreExtSettings.cshtml
+#| msgid "You need to sign in using a SkautIS account in order to change these settings."
+msgctxt "~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.CoreExtSettings.cshtml"
+msgid "You need to sign in using a SkautIS account in order to change these settings."
+msgstr "Abyste mohl(a) provádět úpravy těchto nastavení, musíte se přihlásit pomocí svého účtu ve SkautISu."
+
+#: ~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.CoreExtSettings.cshtml
+#| msgid "Unit Type Id"
+msgctxt "~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.CoreExtSettings.cshtml"
+msgid "Unit Type Id"
+msgstr "Identifikátor typu jednotky"
+
+#: ~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.CoreExtSettings.cshtml
+#| msgid "Id of the type of the organizational unit that this site belongs to."
+msgctxt "~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.CoreExtSettings.cshtml"
+msgid "Id of the type of the organizational unit that this site belongs to."
+msgstr "Identifikátor typu organizační jednotky, které patří tato stránka."
+
+#: ~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.Settings.cshtml
+#| msgid "SkautSIS Users Settings"
+msgctxt "~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.Settings.cshtml"
+msgid "SkautSIS Users Settings"
+msgstr "Nastavení modulu SkautSIS Uživatelé"
+
+#: ~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.Settings.cshtml
+#| msgid "You need to sign in using a SkautIS account in order to change these settings."
+msgctxt "~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.Settings.cshtml"
+msgid "You need to sign in using a SkautIS account in order to change these settings."
+msgstr "Abyste mohl(a) provádět úpravy těchto nastavení, musíte se přihlásit pomocí svého účtu ve SkautISu."
+
+#: ~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.Settings.cshtml
+#| msgid "Membership based role assignments"
+msgctxt "~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.Settings.cshtml"
+msgid "Membership based role assignments"
+msgstr "Přiřazení rolí na základě členství"
+
+#: ~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.Settings.cshtml
+#| msgid "Comma separated list of role names that will be assigned to members of Junák."
+msgctxt "~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.Settings.cshtml"
+msgid "Comma separated list of role names that will be assigned to members of Junák."
+msgstr "Čárkami oddělený seznam názvů rolí, které mají byt přiděleny členům Junáka."
+
+#: ~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.Settings.cshtml
+#| msgid "SkautIS roles based role assignments"
+msgctxt "~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.Settings.cshtml"
+msgid "SkautIS roles based role assignments"
+msgstr "Přiřazení rolí na základě rolí ve SkautISu"
+
+#: ~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.Settings.cshtml
+#| msgid "Comma separated list of \"SkautIsRoleId:WebsiteRoleName:WebsiteRoleName:WebsiteRoleName...\" strings that determine website roles assigned to members of Junák based on their SkautIS roles in the organizational unit that owns the website."
+msgctxt "~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.Settings.cshtml"
+msgid "Comma separated list of \"SkautIsRoleId:WebsiteRoleName:WebsiteRoleName:WebsiteRoleName...\" strings that determine website roles assigned to members of Junák based on their SkautIS roles in the organizational unit that owns the website."
+msgstr "Čárkami oddělený seznam řetězců \"IdRoleVeSkautISu:NázevRoleWebu:NázevRoleWebu:NázevRoleWebu...\", který určuje, jaké role mají být přiřazeny členům Junáka na základě jejich rolí ve SkautISu."
+
+#: ~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.Settings.cshtml
+#| msgid "Local Roles"
+msgctxt "~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.Settings.cshtml"
+msgid "Local Roles"
+msgstr "Místní role"
+
+#: ~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.Settings.cshtml
+#| msgid "Name"
+msgctxt "~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.Settings.cshtml"
+msgid "Name"
+msgstr "Název"
+
+#: ~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.Settings.cshtml
+#| msgid "SkautIS Roles"
+msgctxt "~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.Settings.cshtml"
+msgid "SkautIS Roles"
+msgstr "Role ve SkautISu"
+
+#: ~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.Settings.cshtml
+#| msgid "Id"
+msgctxt "~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.Settings.cshtml"
+msgid "Id"
+msgstr "Id"
+
+#: ~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.User.cshtml
+#| msgid "SkautIS Information"
+msgctxt "~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.User.cshtml"
+msgid "SkautIS Information"
+msgstr "Informace ze SkautISu"
+
+#: ~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.User.cshtml
+#| msgid "SkautIS Username"
+msgctxt "~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.User.cshtml"
+msgid "SkautIS Username"
+msgstr "Uživatelské jméno ve SkautISu"
+
+#: ~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.User.cshtml
+#| msgid "Full name"
+msgctxt "~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.User.cshtml"
+msgid "Full name"
+msgstr "Celé jméno"
+
+#: ~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.User.cshtml
+#| msgid "Birthdate"
+msgctxt "~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.User.cshtml"
+msgid "Birthdate"
+msgstr "Datum narození"
+
+#: ~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml
+#| msgid "Please sign in using one of the offered methods."
+msgctxt "~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml"
+msgid "Please sign in using one of the offered methods."
+msgstr "Přihlaste se prosím pomocí jedné z nabízených metod."
+
+#: ~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml
+#| msgid "To sign in using your SkautIS account, click on the button below."
+msgctxt "~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml"
+msgid "To sign in using your SkautIS account, click on the button below."
+msgstr "Pro přihlášení pomocí vašeho účtu ve SkautISu stiskněte tlačítko níže."
+
+#: ~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml
+#| msgid "To sign in using your local user account, fill in your username and password."
+msgctxt "~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml"
+msgid "To sign in using your local user account, fill in your username and password."
+msgstr "Pro přihlášení pomocí vašeho místního účtu vyplňte uživatelské jméno a heslo."
+
+#: ~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml
+#| msgid "Login was unsuccessful. Please correct the errors and try again."
+msgctxt "~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml"
+msgid "Login was unsuccessful. Please correct the errors and try again."
+msgstr "Přihlášení bylo neúspěšné. Prosím opravte chyby a zkuste to znovu."
+
+#: ~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml
+#| msgid "Register"
+msgctxt "~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml"
+msgid "Register"
+msgstr "Registrujte se"
+
+#: ~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml
+#| msgid " if you don't have an account."
+msgctxt "~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml"
+msgid " if you don't have an account."
+msgstr ", pokud ještě nemáte účet."
+
+#: ~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml
+#| msgid "Lost your Password?"
+msgctxt "~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml"
+msgid "Lost your Password?"
+msgstr "Zapomněli jste heslo?"
+
+#: ~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml
+#| msgid "SkautIS Account"
+msgctxt "~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml"
+msgid "SkautIS Account"
+msgstr "Účet SkautISu"
+
+#: ~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml
+#| msgid "Sign In with SkautIS Account"
+msgctxt "~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml"
+msgid "Sign In with SkautIS Account"
+msgstr "Přihlásit pomocí účtu ve SkautISu"
+
+#: ~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml
+#| msgid "Local User Account"
+msgctxt "~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml"
+msgid "Local User Account"
+msgstr "Místní uživatelský účet"
+
+#: ~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml
+#| msgid "Username"
+msgctxt "~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml"
+msgid "Username"
+msgstr "Jméno"
+
+#: ~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml
+#| msgid "Password"
+msgctxt "~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml"
+msgid "Password"
+msgstr "Heslo"
+
+#: ~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml
+#| msgid "Remember Me"
+msgctxt "~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml"
+msgid "Remember Me"
+msgstr "Zapamatuj si mne"
+
+#: ~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml
+#| msgid "Sign In using Local Account"
+msgctxt "~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml"
+msgid "Sign In using Local Account"
+msgstr "Přihlásit pomocí místního účtu"
+
+#: ~/Modules/SkautSIS.Users/Views/User.cshtml
+#| msgid "Welcome, <strong>{0}</strong>!"
+msgctxt "~/Modules/SkautSIS.Users/Views/User.cshtml"
+msgid "Welcome, <strong>{0}</strong>!"
+msgstr "Vítejte, <strong>{0}</strong>!"
+
+#: ~/Modules/SkautSIS.Users/Views/User.cshtml
+#| msgid "Sign Out"
+msgctxt "~/Modules/SkautSIS.Users/Views/User.cshtml"
+msgid "Sign Out"
+msgstr "Odhlásit se"
+
+#: ~/Modules/SkautSIS.Users/Views/User.cshtml
+#| msgid "Dashboard"
+msgctxt "~/Modules/SkautSIS.Users/Views/User.cshtml"
+msgid "Dashboard"
+msgstr "Administrace"
+
+#: ~/Modules/SkautSIS.Users/Views/User.cshtml
+#| msgid "Sign In"
+msgctxt "~/Modules/SkautSIS.Users/Views/User.cshtml"
+msgid "Sign In"
+msgstr "Přihlásit"

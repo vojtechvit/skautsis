@@ -1,0 +1,44 @@
+﻿@using System.Web.Mvc;
+@using Orchard.ContentManagement;
+@using SkautSIS.Users.Extensions;
+@using SkautSIS.Users.Models;
+@{
+    var user = WorkContext.CurrentUser;
+}
+<div class="user-display">
+    @if (user != null)
+    {
+        var userPart = user.As<SkautIsUserPart>();
+
+        if (userPart != null && userPart.SkautIsUserId != null)
+        {
+            <span class="user-actions welcome">
+                @T("Welcome, <strong>{0}</strong>!", "<a href=\"" + @Url.SkautIsUserManagement() + "\">" + @Html.ItemDisplayText(WorkContext.CurrentUser) + "</a>")
+            </span>
+            <span class="user-actions">
+                @Html.Link(T("Sign Out").ToString(), Url.LogOff(Context.Request.RawUrl), new { rel = "nofollow" })
+                @if (AuthorizedFor(Orchard.Security.StandardPermissions.AccessAdminPanel))
+                {
+                    @Html.ActionLink(T("Dashboard").ToString(), "Index", new { Area = "Dashboard", Controller = "Admin" })
+                }
+            </span>
+        }
+        else
+        {
+            <span class="user-actions welcome">
+                @T("Welcome, <strong>{0}</strong>!", "<a href=\"" + @Url.LocalUserManagement() + "\">" + @Html.ItemDisplayText(WorkContext.CurrentUser) + "</a>")
+            </span>
+            <span class="user-actions">
+                @Html.Link(T("Sign Out").ToString(), Url.LogOff(Context.Request.RawUrl), new { rel = "nofollow" })
+                @if (AuthorizedFor(Orchard.Security.StandardPermissions.AccessAdminPanel))
+                {
+                    @Html.ActionLink(T("Dashboard").ToString(), "Index", new { Area = "Dashboard", Controller = "Admin" })
+                }
+            </span>
+        }
+    }
+    else
+    {
+        <span class="user-actions">@Html.Link(T("Sign In").ToString(), Url.LogOn(Request.QueryString["ReturnUrl"] ?? Request.RawUrl))</span>
+    }
+</div>

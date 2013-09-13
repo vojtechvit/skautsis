@@ -1,0 +1,51 @@
+﻿<Placement>
+  <!-- Customize where the shapes are rendered -->
+  <Place Fields_MediaLibraryPicker__TeaserImage="-"/>
+
+  <Match DisplayType="Detail">
+  </Match>
+  <Match DisplayType="Summary">
+    <Place Parts_Common_Metadata_Summary="Meta:1"/>
+    <Place Parts_Tags_ShowTags="Meta:2"/>
+  </Match>
+
+  <!-- Specific Content Type definitions-->
+  <Match ContentType="Page">
+    <Place Parts_Common_Metadata="Content:after"/>
+  </Match>
+
+  <Match ContentType="Blog">
+    <Place Parts_Common_Metadata="-"/>
+    <Place Parts_Blogs_Blog_Description="-"/>
+  </Match>
+  <Match ContentType="TemaprispevkuTerm">
+    <Place Parts_Common_Metadata="-"/>
+    <Place Parts_Blogs_Blog_Description="-"/>
+  </Match>
+  
+  <Match ContentType="BlogPost">
+    <Match DisplayType="Detail">
+      <Place Parts_Common_Metadata="Meta:1"/>
+      <Place Parts_Tags_ShowTags="Meta:2"/>
+      <Place Parts_Common_Body="Content:1"/>
+      <Place Parts_Share_ShareBar="Content:2"/>
+      <Place Parts_NextPreviousLinks="Content:4"/>
+    </Match>
+    <Match DisplayType="Summary">
+      <Place Parts_Common_Metadata_Summary="Meta:1"/>
+      <Place Parts_Tags_ShowTags="Meta:2"/>
+      <Place Fields_TaxonomyField="-"/>
+      <Place Parts_Common_Body_Summary="-"/>
+    </Match>
+  </Match>
+
+  <!-- Homepage -->
+  <Match Path="/">
+    <Match ContentType="Page">
+      <Place Parts_Title="-"/>
+      <Place Parts_Common_Body="-"/>
+    </Match>
+
+    <Place Parts_Common_Metadata="-"/>
+  </Match>
+</Placement>

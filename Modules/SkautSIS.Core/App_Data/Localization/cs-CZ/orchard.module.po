@@ -1,0 +1,58 @@
+# Orchard resource strings - cs-CZ
+# Copyright (c) 2013 Junák - svaz skautů a skautek ČR
+# All rights reserved
+# This file is distributed under the BSD license
+
+#: SkautSIS.Core.Handlers.SkautSisCoreSettingsPartHandler
+#| msgid "SkautSIS"
+msgctxt "SkautSIS.Core.Handlers.SkautSisCoreSettingsPartHandler"
+msgid "SkautSIS"
+msgstr "SkautSIS"
+
+#: ~/Modules/SkautSIS.Core/Views/EditorTemplates/Parts/SkautSis.Core.Settings.cshtml
+#| msgid "SkautSIS Settings"
+msgctxt "~/Modules/SkautSIS.Core/Views/EditorTemplates/Parts/SkautSis.Core.Settings.cshtml"
+msgid "SkautSIS Settings"
+msgstr "Nastavení SkautSISu"
+
+#: ~/Modules/SkautSIS.Core/Views/EditorTemplates/Parts/SkautSis.Core.Settings.cshtml
+#| msgid "Use testing version of SkautIS web services"
+msgctxt "~/Modules/SkautSIS.Core/Views/EditorTemplates/Parts/SkautSis.Core.Settings.cshtml"
+msgid "Use testing version of SkautIS web services"
+msgstr "Použít testovací verzi webových služeb SkautISu"
+
+#: ~/Modules/SkautSIS.Core/Views/EditorTemplates/Parts/SkautSis.Core.Settings.cshtml
+#| msgid "Application ID"
+msgctxt "~/Modules/SkautSIS.Core/Views/EditorTemplates/Parts/SkautSis.Core.Settings.cshtml"
+msgid "Application ID"
+msgstr "Identifikátor aplikace"
+
+#: ~/Modules/SkautSIS.Core/Views/EditorTemplates/Parts/SkautSis.Core.Settings.cshtml
+#| msgid "The identifier that you receive from SkautIS administrators after their approval of your application."
+msgctxt "~/Modules/SkautSIS.Core/Views/EditorTemplates/Parts/SkautSis.Core.Settings.cshtml"
+msgid "The identifier that you receive from SkautIS administrators after their approval of your application."
+msgstr "Identifikátor, který obdržíte od administrátorů SkautISu poté, co dojde z jejich strany ke schválení vaší aplikace."
+
+#: ~/Modules/SkautSIS.Core/Views/EditorTemplates/Parts/SkautSis.Core.Settings.cshtml
+#| msgid "Unit Registration Number"
+msgctxt "~/Modules/SkautSIS.Core/Views/EditorTemplates/Parts/SkautSis.Core.Settings.cshtml"
+msgid "Unit Registration Number"
+msgstr "Registrační číslo jednotky"
+
+#: ~/Modules/SkautSIS.Core/Views/EditorTemplates/Parts/SkautSis.Core.Settings.cshtml
+#| msgid "Registration number of the organizational unit that this site belongs to."
+msgctxt "~/Modules/SkautSIS.Core/Views/EditorTemplates/Parts/SkautSis.Core.Settings.cshtml"
+msgid "Registration number of the organizational unit that this site belongs to."
+msgstr "Registrační číslo organizační jednotky, které tento web patří."
+
+#: ~/Modules/SkautSIS.Core/Views/EditorTemplates/Parts/SkautSis.Core.Settings.cshtml
+#| msgid "Unit Name"
+msgctxt "~/Modules/SkautSIS.Core/Views/EditorTemplates/Parts/SkautSis.Core.Settings.cshtml"
+msgid "Unit Name"
+msgstr "Název jednotky"
+
+#: ~/Modules/SkautSIS.Core/Views/EditorTemplates/Parts/SkautSis.Core.Settings.cshtml
+#| msgid "Name of the organizational unit that this site belongs to."
+msgctxt "~/Modules/SkautSIS.Core/Views/EditorTemplates/Parts/SkautSis.Core.Settings.cshtml"
+msgid "Name of the organizational unit that this site belongs to."
+msgstr "Název organizační jednotky, které tento web patří."
