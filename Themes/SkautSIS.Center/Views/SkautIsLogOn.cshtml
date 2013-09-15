@@ -1,0 +1,59 @@
+﻿@using Orchard.ContentManagement
+@using SkautSIS.Users.Extensions
+
+@{
+    var userCanRegister = WorkContext.CurrentSite.As<Orchard.Users.Models.RegistrationSettingsPart>().UsersCanRegister;
+    var enableLostPassword = WorkContext.CurrentSite.As<Orchard.Users.Models.RegistrationSettingsPart>().EnableLostPassword;
+}
+
+<h1>@T("User Logon")</h1>
+
+@Html.ValidationSummary(T("Login was unsuccessful. Please correct the errors and try again.").ToString())
+
+<fieldset>
+    <h3>@T("SkautIS Account")</h3>
+    <p>
+        @T("To sign in using your SkautIS account, click on the button below.")
+    </p>
+    @using (Html.BeginFormAntiForgeryPost(Url.SkautIsLogOn(), FormMethod.Get)) {
+        <input type="hidden" name="ReturnUrl" value="@Request.QueryString["ReturnUrl"]" />
+        <div class="form-group">
+            <button type="submit" class="btn btn-default" autofocus="autofocus">@T("Sign In with SkautIS Account")</button>
+        </div>
+    }
+    <p class="help-block">
+        @T("Don't have Account?") @Html.Link(T("Register").Text, Url.SkautIsRegister())
+    </p>
+</fieldset>
+<fieldset>
+    <h3>@T("Local User Account")</h3>
+    <p>
+        @T("To sign in using your local user account, fill in your username and password.")
+    </p>
+    @using (Html.BeginFormAntiForgeryPost(Url.LogOn())) {
+        <input type="hidden" name="ReturnUrl" value="@Request.QueryString["ReturnUrl"]" />
+        <div class="form-group">
+            <label class="control-label" for="userNameOrEmail">@T("Username")</label>
+            @Html.TextBox("userNameOrEmail", "", new { id = "username-email", @class = "form-control", placeholder = T("Username").ToString(), required = "required" })
+            @Html.ValidationMessage("userNameOrEmail")
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="password">@T("Password")</label>
+            @Html.Password("password", string.Empty, new { @class = "form-control", placeholder = T("Password").ToString(), required = "required" })
+            @Html.ValidationMessage("password")
+        </div>
+        <div class="checkbox">
+            <label>
+                @Html.CheckBox("rememberMe", new { id = "remember-me" })
+                @T("Remember me")
+            </label>
+        </div>
+        <button type="submit" class="btn btn-default">@T("Sign In with Local Account")</button>
+    }
+    @if (userCanRegister) {
+        <p class="help-block">
+            @T("Don't have Account?") @Html.Link(T("Register").Text, Url.LocalRegister())<br />
+            @if (enableLostPassword) { @Html.Link(T("Lost your Password?").Text, Url.LocalUserManagement()) }
+        </p>
+    }
+</fieldset>

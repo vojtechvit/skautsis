@@ -1,19 +1,44 @@
-﻿﻿@using System.Web.Mvc;
+﻿@using System.Web.Mvc;
+@using Orchard.ContentManagement;
+@using SkautSIS.Users.Extensions;
+@using SkautSIS.Users.Models;
+@{
+    var user = WorkContext.CurrentUser;
+}
 <ul class="nav pull-right">
-    @if (WorkContext.CurrentUser != null) {
+    @if (user != null)
+    {
+        var userPart = user.As<SkautIsUserPart>();
+
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;@Html.ItemDisplayText(WorkContext.CurrentUser) <span class="caret"></span></a>
-            <ul class="pull-right dropdown-menu">
-                <li>@Html.ActionLink(T("Change Password").ToString(), "ChangePassword", new { Controller = "Account", Area = "Orchard.Users" })</li>
-                <li>@Html.ActionLink(T("Sign Out").ToString(), "LogOff", new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = Context.Request.RawUrl }, new { rel = "nofollow" })</li>
-                @if (AuthorizedFor(Orchard.Security.StandardPermissions.AccessAdminPanel)) {
-                    <li class="divider"></li>
-                    <li>@Html.ActionLink(T("Dashboard").ToString(), "Index", new { Area = "Dashboard", Controller = "Admin" })</li>
-                }
-            </ul>
+            @if (userPart != null && userPart.SkautIsUserId != null)
+            {
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;@Html.ItemDisplayText(WorkContext.CurrentUser) <span class="caret"></span></a>
+                <ul class="pull-right dropdown-menu">
+                    <li>@Html.Link(T("Change Password").ToString(), Url.SkautIsUserManagement())</li>
+                    <li>@Html.Link(T("Sign Out").ToString(), Url.LogOff(Context.Request.RawUrl))</li>
+                    @if (AuthorizedFor(Orchard.Security.StandardPermissions.AccessAdminPanel)) {
+                        <li class="divider"></li>
+                        <li>@Html.ActionLink(T("Dashboard").ToString(), "Index", new { Area = "Dashboard", Controller = "Admin" })</li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;@Html.ItemDisplayText(WorkContext.CurrentUser) <span class="caret"></span></a>
+                <ul class="pull-right dropdown-menu">
+                    <li>@Html.Link(T("Change Password").ToString(), Url.LocalUserManagement())</li>
+                    <li>@Html.Link(T("Sign Out").ToString(), Url.LogOff(Context.Request.RawUrl))</li>
+                    @if (AuthorizedFor(Orchard.Security.StandardPermissions.AccessAdminPanel)) {
+                        <li class="divider"></li>
+                        <li>@Html.ActionLink(T("Dashboard").ToString(), "Index", new { Area = "Dashboard", Controller = "Admin" })</li>
+                    }
+                </ul>
+            }
         </li>
     }
-    else {
-        <li>@Html.ActionLink(T("Sign In").ToString(), "LogOn", new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = (Request.QueryString["ReturnUrl"] ?? Request.RawUrl) }, new { rel = "nofollow" })</li>
+    else
+    {
+        <li>@Html.Link(T("Sign In").ToString(), Url.LogOn(Request.QueryString["ReturnUrl"] ?? Request.RawUrl))</li>
     }
 </ul>

@@ -1,0 +1,118 @@
+# Orchard resource strings - cs-CZ
+# Copyright (c) 2013 Junák - svaz skautů a skautek ČR
+# All rights reserved
+# This file is distributed under the BSD license
+
+#: ~/Themes/SkautSIS.Center/Views/User.cshtml
+#| msgid "Change Password"
+msgctxt "~/Themes/SkautSIS.Center/Views/User.cshtml"
+msgid "Change Password"
+msgstr "Změnit heslo"
+
+#: ~/Themes/SkautSIS.Center/Views/User.cshtml
+#| msgid "Sign Out"
+msgctxt "~/Themes/SkautSIS.Center/Views/User.cshtml"
+msgid "Sign Out"
+msgstr "Odhlásit se"
+
+#: ~/Themes/SkautSIS.Center/Views/User.cshtml
+#| msgid "Dashboard"
+msgctxt "~/Themes/SkautSIS.Center/Views/User.cshtml"
+msgid "Dashboard"
+msgstr "Administrace"
+
+#: ~/Themes/SkautSIS.Center/Views/User.cshtml
+#| msgid "Sign In"
+msgctxt "~/Themes/SkautSIS.Center/Views/User.cshtml"
+msgid "Sign In"
+msgstr "Přihlásit se"
+
+#: ~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml
+#| msgid "User Logon"
+msgctxt "~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml"
+msgid "User Logon"
+msgstr "Přihlášení uživatele"
+
+#: ~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml
+#| msgid "Please sign in using one of the offered methods."
+msgctxt "~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml"
+msgid "Please sign in using one of the offered methods."
+msgstr "Přihlaste se prosím pomocí jedné z nabízených metod."
+
+#: ~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml
+#| msgid "To sign in using your SkautIS account, click on the button below."
+msgctxt "~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml"
+msgid "To sign in using your SkautIS account, click on the button below."
+msgstr "Pro přihlášení pomocí vašeho účtu ve SkautISu stiskněte tlačítko níže."
+
+#: ~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml
+#| msgid "To sign in using your local user account, fill in your username and password."
+msgctxt "~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml"
+msgid "To sign in using your local user account, fill in your username and password."
+msgstr "Pro přihlášení pomocí vašeho místního účtu vyplňte uživatelské jméno a heslo."
+
+#: ~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml
+#| msgid "Login was unsuccessful. Please correct the errors and try again."
+msgctxt "~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml"
+msgid "Login was unsuccessful. Please correct the errors and try again."
+msgstr "Přihlášení bylo neúspěšné. Prosím opravte chyby a zkuste to znovu."
+
+#: ~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml
+#| msgid "Don't have Account?"
+msgctxt "~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml"
+msgid "Don't have Account?"
+msgstr "Nemáte účet?"
+
+#: ~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml
+#| msgid "Register"
+msgctxt "~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml"
+msgid "Register"
+msgstr "Registrujte se"
+
+#: ~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml
+#| msgid "Lost your Password?"
+msgctxt "~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml"
+msgid "Lost your Password?"
+msgstr "Zapomněli jste heslo?"
+
+#: ~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml
+#| msgid "SkautIS Account"
+msgctxt "~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml"
+msgid "SkautIS Account"
+msgstr "Účet SkautISu"
+
+#: ~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml
+#| msgid "Sign In with SkautIS Account"
+msgctxt "~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml"
+msgid "Sign In with SkautIS Account"
+msgstr "Přihlásit pomocí účtu ve SkautISu"
+
+#: ~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml
+#| msgid "Local User Account"
+msgctxt "~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml"
+msgid "Local User Account"
+msgstr "Místní uživatelský účet"
+
+#: ~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml
+#| msgid "Username"
+msgctxt "~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml"
+msgid "Username"
+msgstr "Jméno"
+
+#: ~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml
+#| msgid "Password"
+msgctxt "~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml"
+msgid "Password"
+msgstr "Heslo"
+
+#: ~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml
+#| msgid "Remember Me"
+msgctxt "~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml"
+msgid "Remember Me"
+msgstr "Zapamatuj si mne"
+
+#: ~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml
+#| msgid "Sign In with Local Account"
+msgctxt "~/Themes/SkautSIS.Center/Views/SkautIsLogOn.cshtml"
+msgid "Sign In with Local Account"
+msgstr "Přihlásit pomocí místního účtu"

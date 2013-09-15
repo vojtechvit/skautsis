@@ -18,17 +18,10 @@
 
     RegisterLink(new LinkEntry { Type = "image/x-icon", Rel = "shortcut icon", Href = Url.Content("~/themes/skautsis.center/content/skaut.ico") });
 
-    Script.Require("jQuery").AtHead();
-    Script.Include("jquery-ui-1.10.3.custom.min.js");
-    Script.Include("respond.min.js").UseCondition("lt IE 9").AtHead();
-    Script.Include("bootstrap.min.js");
-    Script.Include("custom.min.js");
-    Script.Include("fullcalendar.min.js");
-    Script.Include("gcal.js");
+    Script.Include("bootstrap.js");
+    Script.Include("custom.js");
 
-    Style.Include("flick/jquery-ui-1.10.3.custom.min.css");
-    Style.Include("site.min.css");
-    Style.Include("fullcalendar.css");
+    Style.Include("site.css");
 
     /* Some useful shortcuts or settings
     ***************************************************************/

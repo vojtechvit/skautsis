@@ -1,4 +1,4 @@
-@font-face {
+﻿@font-face {
   font-family: "The Mix Basic";
   src: url("../../skautsis.center/content/fonts/TheMixBasic_TT6i.woff") format('woff');
 }
@@ -6027,8 +6027,8 @@ td.visible-print {
   filter: alpha(opacity=70);
 }
 .teaserimage-panorama h1 {
-  font-size: 18px;
-  line-height: 52px;
+  font-size: 16px;
+  line-height: 50px;
   margin: 0;
   padding: 0;
   opacity: initial;
