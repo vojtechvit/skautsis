@@ -220,9 +220,9 @@ msgid "Remember Me"
 msgstr "Zapamatuj si mne"
 
 #: ~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml
-#| msgid "Sign In using Local Account"
+#| msgid "Sign In with Local Account"
 msgctxt "~/Modules/SkautSIS.Users/Views/SkautIsLogOn.cshtml"
-msgid "Sign In using Local Account"
+msgid "Sign In with Local Account"
 msgstr "Přihlásit pomocí místního účtu"
 
 #: ~/Modules/SkautSIS.Users/Views/User.cshtml

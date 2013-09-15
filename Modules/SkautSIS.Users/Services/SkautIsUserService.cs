@@ -123,10 +123,8 @@ namespace SkautSIS.Users.Services
 
                 return userPart.TokenExpiration.HasValue && userPart.TokenExpiration.Value > DateTime.UtcNow;
             }
-            else
-            {
-                return true;
-            }
+
+            return false;
         }
 
         public void InvalidateLoginData()
@@ -185,6 +183,7 @@ namespace SkautSIS.Users.Services
             if (this.IsSkautIsUser(user))
             {
                 int userSkautIsId = userSkautIsPart.SkautIsUserId.Value;
+                int userSkautIsPersonId = userSkautIsPart.PersonId.Value;
                 
                 try
                 {
@@ -192,7 +191,7 @@ namespace SkautSIS.Users.Services
                     var personDetail = this.organizationUnitClient.Value.PersonDetail(new PersonDetailInput
                     {
                         ID_Login = token,
-                        ID = userSkautIsId
+                        ID = userSkautIsPersonId
                     });
 
                     if (personDetail != null)
@@ -211,6 +210,7 @@ namespace SkautSIS.Users.Services
                         ID = userSkautIsId
                     });
 
+                    userSkautIsPart.SkautIsUserName = userDetail.UserName;
                     userSkautIsPart.HasMembership = userDetail.HasMembership.Value;
 
                     // Load user's SkautIS roles
@@ -221,7 +221,10 @@ namespace SkautSIS.Users.Services
                         IsActive = true
                     });
 
-                    userSkautIsPart.SkautIsRoles = String.Join(",", userSkautIsRoles.Where(r => r.ID_Unit.HasValue).GroupBy(r => r.ID_Unit.Value).Select(g => g.Key + ":" + String.Join(":", g.Select(r => r.ID_Role.Value))));
+                    userSkautIsPart.SkautIsRoles = String.Join(",", userSkautIsRoles
+                        .Where(r => r.ID_Unit.HasValue)
+                        .GroupBy(r => r.ID_Unit.Value)
+                        .Select(g => g.Key + ":" + String.Join(":", g.Select(r => r.ID_Role.Value).Distinct())));
                 }
                 catch (Exception e)
                 {
@@ -309,7 +312,7 @@ namespace SkautSIS.Users.Services
                 ? this.membershipService.GetUser(userPart.As<UserPart>().UserName)
                 : this.CreateUser(userDetail, token);
 
-            this.UpdateUserInfo(user);
+            this.UpdateUserInfo(user, token);
 
             return user;
         }
@@ -318,7 +321,7 @@ namespace SkautSIS.Users.Services
         {
             var personDetail = this.organizationUnitClient.Value.PersonDetail(new PersonDetailInput
             {
-                ID = userDetail.ID.Value,
+                ID = userDetail.ID_Person.Value,
                 ID_Login = token
             });
 

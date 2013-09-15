@@ -55,7 +55,7 @@ namespace SkautSIS.Users.Controllers
 
             if (ReturnUrl != null)
             {
-                var returnUri = new Uri(ReturnUrl);
+                var returnUri = new Uri(ReturnUrl, UriKind.RelativeOrAbsolute);
 
                 if (!returnUri.IsAbsoluteUri)
                 {
@@ -85,10 +85,7 @@ namespace SkautSIS.Users.Controllers
                 else
                 {
                     var user = this.userService.GetOrCreateUser(skautIS_Token.Value);
-                    var userPart = user.As<SkautIsUserPart>();
-                    userPart.RoleId = skautIS_IDRole.Value;
-                    userPart.UnitId = skautIS_IDUnit.Value;
-
+                    
                     if (user == null)
                     {
                         this.notifier.Error(T("Logon was unsuccessful."));
@@ -96,6 +93,11 @@ namespace SkautSIS.Users.Controllers
                     }
                     else
                     {
+                        var userPart = user.As<SkautIsUserPart>();
+                        userPart.Token = skautIS_Token.Value;
+                        userPart.TokenExpiration = DateTime.UtcNow.AddMinutes(SkautIsUserService.TokenExpirationPeriod);
+                        userPart.RoleId = skautIS_IDRole.Value;
+                        userPart.UnitId = skautIS_IDUnit.Value;
                         authenticationService.SignIn(user, false);
                     }
                 }
@@ -110,27 +112,23 @@ namespace SkautSIS.Users.Controllers
 
             if (user != null)
             {
+                this.authenticationService.SignOut();
                 var userPart = user.As<SkautIsUserPart>();
 
-                if (userPart != null && userPart.Token.HasValue)
+                if (userPart != null)
                 {
-                    var skautIsUrl = this.coreSettings.SkautIsUrl;
-                    var appId = this.coreSettings.AppId;
-                    var userToken = userPart.Token.Value;
-
-                    this.authenticationService.SignOut();
-
-                    if (tokenExpired.HasValue && tokenExpired.Value)
+                    if (this.userService.HasValidToken(user))
                     {
-                        // User was redirected by Orchard after an expired token had been detected
-                        this.notifier.Information(T("You have been logged out due to inactivity."));
-                        return this.RedirectLocal(ReturnUrl);
-                    }
-                    else
-                    {
+                        var skautIsUrl = this.coreSettings.SkautIsUrl;
+                        var appId = this.coreSettings.AppId;
+                        var userToken = userPart.Token.Value;
+
+                        this.authenticationService.SignOut();
+                        this.userService.InvalidateLoginData(user);
+
                         if (ReturnUrl != null)
                         {
-                            var returnUri = new Uri(ReturnUrl);
+                            var returnUri = new Uri(ReturnUrl, UriKind.RelativeOrAbsolute);
 
                             if (!returnUri.IsAbsoluteUri)
                             {
@@ -140,10 +138,16 @@ namespace SkautSIS.Users.Controllers
 
                         return Redirect(String.Format("{0}Login/LogOut.aspx?AppID={1}&Token={2}", skautIsUrl, appId, userToken));
                     }
-                }
-                else
-                {
-                    this.authenticationService.SignOut();
+                    else
+                    {
+                        this.userService.InvalidateLoginData(user);
+
+                        if (tokenExpired.HasValue && tokenExpired.Value)
+                        {
+                            // User was redirected by Orchard after an expired token had been detected
+                            this.notifier.Information(T("You have been logged out due to inactivity."));
+                        }
+                    }
                 }
             }
 

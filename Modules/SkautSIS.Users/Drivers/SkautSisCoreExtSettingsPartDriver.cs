@@ -11,11 +11,14 @@ namespace SkautSIS.Users.Drivers
     public class SkautSisCoreExtSettingsPartDriver : ContentPartDriver<SkautSisCoreExtSettingsPart>
     {
         private readonly ISkautIsUserService userService;
+        private readonly ISkautSisExtCoreService extCoreService;
 
         public SkautSisCoreExtSettingsPartDriver(
-            ISkautIsUserService userService)
+            ISkautIsUserService userService,
+            ISkautSisExtCoreService extCoreService)
         {
             this.userService = userService;
+            this.extCoreService = extCoreService;
         }
 
         protected override string Prefix { get { return "SkautSisUsersCoreExtSettings"; } }
@@ -35,9 +38,10 @@ namespace SkautSIS.Users.Drivers
                     SkautIsUserNeeded = !this.userService.IsSkautIsUser()
                 };
 
-                if (updater != null)
+                if (updater != null && this.userService.IsSkautIsUser())
                 {
-                    // Properties of this part are changed automatically elsewhere
+                    this.extCoreService.RefreshUnitInfo();
+
                     // updater.TryUpdateModel(part, Prefix, null, null);
                 }
 

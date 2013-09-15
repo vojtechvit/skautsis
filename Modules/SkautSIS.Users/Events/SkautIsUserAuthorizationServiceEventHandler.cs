@@ -4,28 +4,33 @@ using Orchard.Roles.Models;
 using Orchard.Roles.Services;
 using Orchard.Security;
 using SkautSIS.Core.Models;
+using SkautSIS.Users.Extensions;
 using SkautSIS.Users.Models;
 using SkautSIS.Users.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.Mvc;
 
 namespace SkautSIS.Users.Events
 {
     public class SkautIsUserAuthorizationServiceEvenetHandler : IAuthorizationServiceEventHandler
     {
-        private const string AssignedRolesCacheKey = "SkautSIS.Users.AssignedRoles";
+        public const string TokenRefreshedCacheKey = "SkautSIS.Users.TokenRefreshed";
+        public const string RolesAssignedCacheKey = "SkautSIS.Users.RolesAssigned";
+
+        private readonly IWorkContextAccessor workContextAccessor;
         private readonly ISkautIsUserService userService;
         private readonly IRoleService roleService;
-        private readonly IWorkContextAccessor workContextAccessor;
 
         public SkautIsUserAuthorizationServiceEvenetHandler(
+            IWorkContextAccessor workContextAccessor,
             ISkautIsUserService userService,
-            IRoleService roleService,
-            IWorkContextAccessor workContextAccessor)
+            IRoleService roleService)
         {
+            this.workContextAccessor = workContextAccessor;
             this.userService = userService;
             this.roleService = roleService;
-            this.workContextAccessor = workContextAccessor;
         }
 
         public void Checking(CheckAccessContext context)
@@ -34,27 +39,8 @@ namespace SkautSIS.Users.Events
             {
                 var userPart = context.User.As<SkautIsUserPart>();
 
-                if (context.User.Has<IUserRoles>())
-                {
-                    var rolesPart = context.User.As<IUserRoles>();
-                    var workContext = this.workContextAccessor.GetContext();
-
-                    var rolesToAssign = workContext.GetState<IEnumerable<string>>(AssignedRolesCacheKey);
-
-                    if (rolesToAssign == null)
-                    {
-                        rolesToAssign = this.GetRolesAssignedByMembership(userPart).Union(this.GetRolesAssignedBySkautIsRoles(userPart));
-                        workContext.SetState(AssignedRolesCacheKey, rolesToAssign);
-                    }
-                    
-                    foreach (var role in rolesToAssign)
-                    {
-                        if (!rolesPart.Roles.Contains(role))
-                        {
-                            rolesPart.Roles.Add(role);
-                        }
-                    }
-                }
+                RefreshUserToken(userPart);
+                AddRoles(userPart);
             }
         }
 
@@ -64,11 +50,73 @@ namespace SkautSIS.Users.Events
         public void Complete(CheckAccessContext context)
         { }
 
+        private void RefreshUserToken(SkautIsUserPart part)
+        {
+            var workContext = this.workContextAccessor.GetContext();
+            bool? tokenRefreshed = workContext.GetState<bool?>(TokenRefreshedCacheKey);
+
+            if (!tokenRefreshed.HasValue || !tokenRefreshed.Value)
+            {
+                var user = workContext.CurrentUser;
+
+                if (this.userService.IsSkautIsUser(user))
+                {
+                    if (this.userService.HasValidToken(user))
+                    {
+                        this.userService.RefreshToken(user);
+
+                        workContext.SetState(TokenRefreshedCacheKey, (bool?)true);
+                    }
+                    else
+                    {
+                        // Redirect to logoff page
+                        var request = workContext.HttpContext.Request;
+                        var response = workContext.HttpContext.Response;
+
+                        var urlHelper = new UrlHelper(request.RequestContext);
+                        response.Redirect(urlHelper.LogOff(request.RawUrl, tokenExpired: true), true);
+                    }
+                }
+            }
+        }
+
+        private void AddRoles(SkautIsUserPart userPart)
+        {
+            var workContext = this.workContextAccessor.GetContext();
+            bool? rolesAssigned = workContext.GetState<bool?>(RolesAssignedCacheKey);
+
+            if (!rolesAssigned.HasValue || !rolesAssigned.Value)
+            {
+                if (userPart.Has<IUserRoles>())
+                {
+                    var rolesPart = userPart.As<IUserRoles>();
+
+                    var rolesToAssign = this.GetRolesAssignedByMembership(userPart)
+                        .Union(this.GetRolesAssignedBySkautIsRoles(userPart))
+                        .Distinct()
+                        .ToArray();
+
+                    foreach (var role in rolesToAssign)
+                    {
+                        if (!rolesPart.Roles.Contains(role))
+                        {
+                            rolesPart.Roles.Add(role);
+                        }
+                    }
+                }
+
+                // Cache assigned roles
+                workContext.SetState(RolesAssignedCacheKey, (bool?)true);
+            }
+        }
+
         private IEnumerable<string> GetRolesAssignedByMembership(SkautIsUserPart userPart)
         {
             var usersSettings = workContextAccessor.GetContext().CurrentSite.As<SkautSisUsersSettingsPart>();
 
-            return userPart.HasMembership.HasValue && userPart.HasMembership.Value
+            return !String.IsNullOrEmpty(usersSettings.RolesAssignedByMembership)
+                && userPart.HasMembership.HasValue 
+                && userPart.HasMembership.Value
                 ? usersSettings.RolesAssignedByMembership.Split(',')
                 : new string[] { };
         }
@@ -80,7 +128,7 @@ namespace SkautSIS.Users.Events
 
             var roles = new HashSet<string>();
 
-            if (coreSettings.UnitId.HasValue)
+            if (!String.IsNullOrEmpty(usersSettings.RolesAssignedBySkautIsRoles) && coreSettings.UnitId.HasValue)
             {
                 // Dictionary: {UnitId} => {{RoleId},{RoleId},{RoleId}}
                 var userSkautIsRoles = userPart.SkautIsRoles.Split(',').Select(x => x.Split(':')).ToDictionary(x => int.Parse(x.First()), x => x.Skip(1).Select(y => int.Parse(y)));

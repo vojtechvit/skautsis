@@ -20,6 +20,7 @@ namespace SkautSIS.Users.Drivers
         private readonly IWorkContextAccessor workContextAccessor;
         private readonly IRoleService roleService;
         private readonly Lazy<SkautSisCoreSettingsPart> coreSettings;
+        private readonly Lazy<SkautSisCoreExtSettingsPart> coreExtSettings;
         private readonly Lazy<UserManagementSoapClient> userManagementClient;
 
         public SkautSisUsersSettingsPartDriver(
@@ -31,6 +32,8 @@ namespace SkautSIS.Users.Drivers
 
             this.coreSettings = new Lazy<SkautSisCoreSettingsPart>(
                 () => this.workContextAccessor.GetContext().CurrentSite.As<SkautSisCoreSettingsPart>());
+            this.coreExtSettings = new Lazy<SkautSisCoreExtSettingsPart>(
+                () => this.workContextAccessor.GetContext().CurrentSite.As<SkautSisCoreExtSettingsPart>());
 
             this.userManagementClient = new Lazy<UserManagementSoapClient>(
                 () => new UserManagementSoapClient(
@@ -75,7 +78,8 @@ namespace SkautSIS.Users.Drivers
                     {
                         var roles = this.userManagementClient.Value.RoleAll(new RoleAllInput
                             {
-                                ID_Login = userPart.Token.Value
+                                ID_Login = userPart.Token.Value,
+                                ID_UnitType = this.coreExtSettings.Value.UnitTypeId
                             });
 
                         viewModel.SkautIsRoles = roles.Select(r => new SelectListItem

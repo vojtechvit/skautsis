@@ -11,14 +11,14 @@
 
         <fieldset>
             <label>@T("Full name")</label>
-            <input type="text" class="textMedium" disabled="disabled" value="@Model.UserPart.LastName @Model.UserPart.FirstName @if (HasText(Model.UserPart.NickName)) { <text>(@Model.UserPart.NickName)</text> }" />
+            <input type="text" class="textMedium" disabled="disabled" value="@Model.UserPart.LastName @Model.UserPart.FirstName @(HasText(Model.UserPart.NickName) ? "(" + Model.UserPart.NickName + ")" : "")" />
         </fieldset>
 
         @if (Model.UserPart.BirthDate.HasValue)
         {
             <fieldset>
                 <label>@T("Birthdate")</label>
-                <input type="text" class="textMedium" disabled="disabled" value="@Display(New.DateTime(Model.UserPart.BirthDate.Value, Model.DateTimeLocalization.ShortDateFormat))" />
+                <input type="text" class="textMedium" disabled="disabled" value="@Display(New.DateTime(DateTimeUtc: Model.UserPart.BirthDate.Value, CustomFormat: Model.DateTimeLocalization.ShortDateFormat))" />
             </fieldset>
         }
     </fieldset>

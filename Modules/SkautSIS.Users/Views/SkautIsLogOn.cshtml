@@ -12,7 +12,8 @@
 </p>
 @Html.ValidationSummary(T("Login was unsuccessful. Please correct the errors and try again.").ToString())
 
-<form action="@Url.SkautIsLogOn(Request.QueryString["ReturnUrl"])" method="get">
+@using (Html.BeginFormAntiForgeryPost(Url.SkautIsLogOn(), FormMethod.Get)) {
+    <input type="hidden" name="ReturnUrl" value="@Request.QueryString["ReturnUrl"]" />
     <fieldset class="login-form group">
         <legend>@T("SkautIS Account")</legend>
         <p>
@@ -21,9 +22,10 @@
         </p>
         <input class="primaryAction" type="submit" value="@T("Sign In with SkautIS Account")" />
     </fieldset>
-</form>
+}
 
-@using (Html.BeginFormAntiForgeryPost(Url.LogOn(Request.QueryString["ReturnUrl"]))) {
+@using (Html.BeginFormAntiForgeryPost(Url.LogOn())) {
+<input type="hidden" name="ReturnUrl" value="@Request.QueryString["ReturnUrl"]" />
 <fieldset class="login-form group">
     <legend>@T("Local User Account")</legend>
     <p>
@@ -46,6 +48,6 @@
             @Html.CheckBox("rememberMe", new { id = "remember-me" })<label class="forcheckbox" for="remember-me">@T("Remember Me")</label>
         </li>
     </ol>
-    <button class="primaryAction" type="submit">@T("Sign In using Local Account")</button>
+    <button class="primaryAction" type="submit">@T("Sign In with Local Account")</button>
 </fieldset>
 }

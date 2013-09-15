@@ -5,7 +5,7 @@ namespace SkautSIS.Users.Extensions
 {
     public static class UrlHelperExtensions
     {
-        public static string LogOn(this UrlHelper urlHelper, string returnUrl)
+        public static string LogOn(this UrlHelper urlHelper, string returnUrl = null)
         {
             if (!string.IsNullOrEmpty(returnUrl))
             {
@@ -15,12 +15,12 @@ namespace SkautSIS.Users.Extensions
             return urlHelper.Action("LogOn", "Account", new { area = Constants.OrchardUsersArea });
         }
 
-        public static string SkautIsLogOn(this UrlHelper urlHelper, string returnUrl)
+        public static string SkautIsLogOn(this UrlHelper urlHelper, string returnUrl = null)
         {
             return urlHelper.Action("LogOn", "Account", new { area = Constants.LocalArea, ReturnUrl = returnUrl });
         }
 
-        public static string LogOff(this UrlHelper urlHelper, string returnUrl, bool tokenExpired = false)
+        public static string LogOff(this UrlHelper urlHelper, string returnUrl = null, bool tokenExpired = false)
         {
             var routeValues = new RouteValueDictionary
             {
