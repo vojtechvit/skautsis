@@ -9,6 +9,17 @@
     else
     {
         <div>
+            @Html.LabelFor(m => m.ExtSettingsPart.UnitRegistrationNumber, T("Unit Registration Number"))
+            @Html.TextBoxFor(m => m.ExtSettingsPart.UnitRegistrationNumber, new { @class = "text small" })
+            @Html.ValidationMessageFor(m => m.ExtSettingsPart.UnitRegistrationNumber, "*")
+            <span class="hint">@T("Registration number of the organizational unit that this site belongs to.")</span>
+        </div>
+        <div>
+            @Html.LabelFor(m => m.ExtSettingsPart.UnitDisplayName, T("Unit Name"))
+            @Html.TextBoxFor(m => m.ExtSettingsPart.UnitDisplayName, new { @class = "textMedium", disabled="disabled" })
+            <span class="hint">@T("Name of the organizational unit that this site belongs to.")</span>
+        </div>
+        <div>
             @Html.LabelFor(m => m.ExtSettingsPart.UnitTypeId, T("Unit Type Id"))
             @Html.TextBoxFor(m => m.ExtSettingsPart.UnitTypeId, new { @class = "textMedium", disabled="disabled" })
             <span class="hint">@T("Id of the type of the organizational unit that this site belongs to.")</span>

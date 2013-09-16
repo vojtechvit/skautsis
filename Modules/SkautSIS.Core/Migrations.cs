@@ -18,12 +18,23 @@ namespace SkautSIS.Core
                 .ContentPartRecord()
                 .Column("AppId", DbType.Guid)
                 .Column<bool>("UseTestingWebServices")
-                .Column<string>("UnitRegistrationNumber", c => c.WithLength(20))
-                .Column<string>("UnitDisplayName", c => c.WithLength(200))
-                .Column<int>("UnitId")
             );
 
-            return 1;
+            return 2;
+        }
+
+        public int UpdateFrom1()
+        {
+            SchemaBuilder.AlterTable("SkautSisCoreSettingsPartRecord",
+                table => table.DropColumn("UnitRegistrationNumber"));
+
+            SchemaBuilder.AlterTable("SkautSisCoreSettingsPartRecord",
+                table => table.DropColumn("UnitDisplayName"));
+
+            SchemaBuilder.AlterTable("SkautSisCoreSettingsPartRecord",
+                table => table.DropColumn("UnitId"));
+
+            return 2;
         }
     }
 }

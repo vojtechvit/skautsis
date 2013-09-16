@@ -40,9 +40,9 @@ namespace SkautSIS.Users.Drivers
 
                 if (updater != null && this.userService.IsSkautIsUser())
                 {
-                    this.extCoreService.RefreshUnitInfo();
+                    updater.TryUpdateModel(viewModel, Prefix, null, null);
 
-                    // updater.TryUpdateModel(part, Prefix, null, null);
+                    this.extCoreService.RefreshUnitInfo();
                 }
 
                 return shapeHelper.EditorTemplate(TemplateName: "Parts/SkautSis.Users.CoreExtSettings", Model: viewModel, Prefix: Prefix);
@@ -52,13 +52,22 @@ namespace SkautSIS.Users.Drivers
 
         protected override void Importing(SkautSisCoreExtSettingsPart part, ImportContentContext context)
         {
+            var unitId = context.Attribute(part.PartDefinition.Name, "UnitId");
+            var unitRegistrationNumber = context.Attribute(part.PartDefinition.Name, "UnitRegistrationNumber");
+            var unitDisplayName = context.Attribute(part.PartDefinition.Name, "UnitDisplayName");
             var unitTypeId = context.Attribute(part.PartDefinition.Name, "UnitTypeId");
 
+            if (unitId != null) part.UnitId = int.Parse(unitId);
+            if (unitRegistrationNumber != null) part.UnitRegistrationNumber = unitRegistrationNumber;
+            if (unitDisplayName != null) part.UnitDisplayName = unitDisplayName;
             if (unitTypeId != null) part.UnitTypeId = unitTypeId;
         }
 
         protected override void Exporting(SkautSisCoreExtSettingsPart part, ExportContentContext context)
         {
+            context.Element(part.PartDefinition.Name).SetAttributeValue("UnitId", part.Record.UnitId);
+            context.Element(part.PartDefinition.Name).SetAttributeValue("UnitRegistrationNumber", part.Record.UnitRegistrationNumber);
+            context.Element(part.PartDefinition.Name).SetAttributeValue("UnitDisplayName", part.Record.UnitDisplayName);
             context.Element(part.PartDefinition.Name).SetAttributeValue("UnitTypeId", part.Record.UnitTypeId);
         }
     }

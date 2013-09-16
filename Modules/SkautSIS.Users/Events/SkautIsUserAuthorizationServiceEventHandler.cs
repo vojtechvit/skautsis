@@ -3,7 +3,6 @@ using Orchard.ContentManagement;
 using Orchard.Roles.Models;
 using Orchard.Roles.Services;
 using Orchard.Security;
-using SkautSIS.Core.Models;
 using SkautSIS.Users.Extensions;
 using SkautSIS.Users.Models;
 using SkautSIS.Users.Services;
@@ -123,21 +122,21 @@ namespace SkautSIS.Users.Events
 
         private IEnumerable<string> GetRolesAssignedBySkautIsRoles(SkautIsUserPart userPart)
         {
-            var coreSettings = workContextAccessor.GetContext().CurrentSite.As<SkautSisCoreSettingsPart>();
+            var extCoreSettings = workContextAccessor.GetContext().CurrentSite.As<SkautSisCoreExtSettingsPart>();
             var usersSettings = workContextAccessor.GetContext().CurrentSite.As<SkautSisUsersSettingsPart>();
 
             var roles = new HashSet<string>();
 
-            if (!String.IsNullOrEmpty(usersSettings.RolesAssignedBySkautIsRoles) && coreSettings.UnitId.HasValue)
+            if (!String.IsNullOrEmpty(usersSettings.RolesAssignedBySkautIsRoles) && extCoreSettings.UnitId.HasValue)
             {
                 // Dictionary: {UnitId} => {{RoleId},{RoleId},{RoleId}}
                 var userSkautIsRoles = userPart.SkautIsRoles.Split(',').Select(x => x.Split(':')).ToDictionary(x => int.Parse(x.First()), x => x.Skip(1).Select(y => int.Parse(y)));
 
-                if (userSkautIsRoles.ContainsKey(coreSettings.UnitId.Value))
+                if (userSkautIsRoles.ContainsKey(extCoreSettings.UnitId.Value))
                 {
                     var roleAssignments = usersSettings.RolesAssignedBySkautIsRoles.Split(',').Select(x => x.Split(':')).ToDictionary(x => int.Parse(x.First()), x => x.Skip(1));
 
-                    foreach (var roleId in userSkautIsRoles[coreSettings.UnitId.Value])
+                    foreach (var roleId in userSkautIsRoles[extCoreSettings.UnitId.Value])
                     {
                         if (roleAssignments.ContainsKey(roleId))
                         {

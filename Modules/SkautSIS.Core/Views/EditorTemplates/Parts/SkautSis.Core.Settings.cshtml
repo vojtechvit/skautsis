@@ -12,15 +12,4 @@
         @Html.ValidationMessageFor(m => m.AppId, "*")
         <span class="hint">@T("The identifier that you receive from SkautIS administrators after their approval of your application.")</span>
     </div>
-    <div>
-        @Html.LabelFor(m => m.UnitRegistrationNumber, T("Unit Registration Number"))
-        @Html.TextBoxFor(m => m.UnitRegistrationNumber, new { @class = "text small" })
-        @Html.ValidationMessageFor(m => m.UnitRegistrationNumber, "*")
-        <span class="hint">@T("Registration number of the organizational unit that this site belongs to.")</span>
-    </div>
-    <div>
-        @Html.LabelFor(m => m.UnitDisplayName, T("Unit Name"))
-        @Html.TextBoxFor(m => m.UnitDisplayName, new { @class = "textMedium", disabled="disabled" })
-        <span class="hint">@T("Name of the organizational unit that this site belongs to.")</span>
-    </div>
 </fieldset>

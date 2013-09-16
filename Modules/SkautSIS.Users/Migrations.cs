@@ -15,6 +15,9 @@ namespace SkautSIS.Users
             SchemaBuilder.CreateTable("SkautSisCoreExtSettingsPartRecord",
                 table => table
                 .ContentPartRecord()
+                .Column<string>("UnitRegistrationNumber", c => c.WithLength(20))
+                .Column<string>("UnitDisplayName", c => c.WithLength(200))
+                .Column<int>("UnitId")
                 .Column<string>("UnitTypeId", c => c.WithLength(100))
             );
 
@@ -32,9 +35,9 @@ namespace SkautSIS.Users
                 .Column<string>("SkautIsUserName", c => c.WithLength(200))
                 .Column<int>("PersonId")
                 .Column("Token", DbType.Guid)
-                .Column<int>("RoleId")
                 .Column<DateTime>("TokenExpiration")
-                .Column<bool>("UnitId")
+                .Column<int>("RoleId")
+                .Column<int>("UnitId")
                 .Column<bool>("HasMembership")
                 .Column<string>("SkautIsRoles", c => c.WithLength(300))
                 .Column<string>("FirstName", c => c.WithLength(100))
@@ -46,7 +49,21 @@ namespace SkautSIS.Users
             SchemaBuilder.AlterTable("SkautIsUserPartRecord",
                 table => table.CreateIndex("IX_SkautIsUserId", "SkautIsUserId"));
 
-            return 1;
+            return 2;
+        }
+
+        public int UpdateFrom1()
+        {
+            SchemaBuilder.AlterTable("SkautSisCoreExtSettingsPartRecord",
+                table => table.AddColumn<string>("UnitRegistrationNumber", c => c.WithLength(20)));
+
+            SchemaBuilder.AlterTable("SkautSisCoreExtSettingsPartRecord",
+                table => table.AddColumn<string>("UnitDisplayName", c => c.WithLength(200)));
+
+            SchemaBuilder.AlterTable("SkautSisCoreExtSettingsPartRecord",
+                table => table.AddColumn<int>("UnitId"));
+
+            return 2;
         }
     }
 }

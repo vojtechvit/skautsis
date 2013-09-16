@@ -69,41 +69,33 @@ namespace SkautSIS.Users.Controllers
         [HttpPost, ActionName("LogOn"), AlwaysAccessible]
         public ActionResult LogOnPOST(bool? skautIS_Logout, Guid? skautIS_Token, int? skautIS_IDUnit, int? skautIS_IDRole, string ReturnURL) 
         {
-            if (skautIS_Logout.HasValue && skautIS_Logout.Value)
+            // User was redirected from SkautIS after he has been successfully logged in
+            if (!skautIS_Token.HasValue || !skautIS_IDRole.HasValue || !skautIS_IDUnit.HasValue)
             {
-                // User was redirected from SkautIS after he has been logged out
-                return this.RedirectLocal(ReturnURL);
+                this.notifier.Error(T("Logon was unsuccessful."));
+                Logger.Debug("SkautIS login POST request detected, but not all required parameters were supplied.");
             }
             else
             {
-                // User was redirected from SkautIS after he has been successfully logged in
-                if (!skautIS_Token.HasValue || !skautIS_IDRole.HasValue || !skautIS_IDUnit.HasValue)
+                var user = this.userService.GetOrCreateUser(skautIS_Token.Value);
+                    
+                if (user == null)
                 {
                     this.notifier.Error(T("Logon was unsuccessful."));
-                    Logger.Debug("SkautIS login POST request detected, but not all required parameters were supplied.");
+                    Logger.Debug(string.Format("Could not get/create user with token '{0}'", skautIS_Token.Value));
                 }
                 else
                 {
-                    var user = this.userService.GetOrCreateUser(skautIS_Token.Value);
-                    
-                    if (user == null)
-                    {
-                        this.notifier.Error(T("Logon was unsuccessful."));
-                        Logger.Debug(string.Format("Could not get/create user with token '{0}'", skautIS_Token.Value));
-                    }
-                    else
-                    {
-                        var userPart = user.As<SkautIsUserPart>();
-                        userPart.Token = skautIS_Token.Value;
-                        userPart.TokenExpiration = DateTime.UtcNow.AddMinutes(SkautIsUserService.TokenExpirationPeriod);
-                        userPart.RoleId = skautIS_IDRole.Value;
-                        userPart.UnitId = skautIS_IDUnit.Value;
-                        authenticationService.SignIn(user, false);
-                    }
+                    var userPart = user.As<SkautIsUserPart>();
+                    userPart.Token = skautIS_Token.Value;
+                    userPart.TokenExpiration = DateTime.UtcNow.AddMinutes(SkautIsUserService.TokenExpirationPeriod);
+                    userPart.RoleId = skautIS_IDRole.Value;
+                    userPart.UnitId = skautIS_IDUnit.Value;
+                    authenticationService.SignIn(user, false);
                 }
-                
-                return this.RedirectLocal(ReturnURL);
             }
+                
+            return this.RedirectLocal(ReturnURL);
         }
 
         public ActionResult LogOff(string ReturnUrl, bool? tokenExpired)

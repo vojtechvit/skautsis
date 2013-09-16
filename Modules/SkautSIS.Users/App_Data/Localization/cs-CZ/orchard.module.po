@@ -46,6 +46,30 @@ msgid "You need to sign in using a SkautIS account in order to change these sett
 msgstr "Abyste mohl(a) provádět úpravy těchto nastavení, musíte se přihlásit pomocí svého účtu ve SkautISu."
 
 #: ~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.CoreExtSettings.cshtml
+#| msgid "Unit Registration Number"
+msgctxt "~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.CoreExtSettings.cshtml"
+msgid "Unit Registration Number"
+msgstr "Registrační číslo jednotky"
+
+#: ~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.CoreExtSettings.cshtml
+#| msgid "Registration number of the organizational unit that this site belongs to."
+msgctxt "~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.CoreExtSettings.cshtml"
+msgid "Registration number of the organizational unit that this site belongs to."
+msgstr "Registrační číslo organizační jednotky, které tento web patří."
+
+#: ~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.CoreExtSettings.cshtml
+#| msgid "Unit Name"
+msgctxt "~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.CoreExtSettings.cshtml"
+msgid "Unit Name"
+msgstr "Název jednotky"
+
+#: ~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.CoreExtSettings.cshtml
+#| msgid "Name of the organizational unit that this site belongs to."
+msgctxt "~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.CoreExtSettings.cshtml"
+msgid "Name of the organizational unit that this site belongs to."
+msgstr "Název organizační jednotky, které tento web patří."
+
+#: ~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.CoreExtSettings.cshtml
 #| msgid "Unit Type Id"
 msgctxt "~/Modules/SkautSIS.Users/Views/EditorTemplates/Parts/SkautSis.Users.CoreExtSettings.cshtml"
 msgid "Unit Type Id"

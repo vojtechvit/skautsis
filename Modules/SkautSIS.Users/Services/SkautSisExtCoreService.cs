@@ -3,6 +3,7 @@ using Orchard.ContentManagement;
 using Orchard.Logging;
 using SkautSIS.Core.Models;
 using SkautSIS.Users.Models;
+using System.Linq;
 using SkautSIS.Users.Services.SkautIs.OrganizationUnit;
 using System;
 
@@ -39,11 +40,14 @@ namespace SkautSIS.Users.Services
             var extCoreSettings = workContext.CurrentSite.As<SkautSisCoreExtSettingsPart>();
             
             var appId = coreSettings.AppId;
-            var unitId = coreSettings.UnitId;
             var token = userPart.Token;
+            var registrationNumber = extCoreSettings.UnitRegistrationNumber;
 
-            if (!unitId.HasValue)
+            if (String.IsNullOrEmpty(registrationNumber))
             {
+                extCoreSettings.UnitRegistrationNumber = null;
+                extCoreSettings.UnitId = null;
+                extCoreSettings.UnitDisplayName = null;
                 extCoreSettings.UnitTypeId = null;
             }
             else
@@ -52,14 +56,26 @@ namespace SkautSIS.Users.Services
                 {
                     try
                     {
-                        var unit = this.organizationUnitClient.Value.UnitDetail(new UnitDetailInput
-                            {
-                                ID = unitId.Value,
-                                ID_Application = appId.Value,
-                                ID_Login = token.Value
-                            });
+                        var unit = this.organizationUnitClient.Value.UnitAll(new UnitAllInput
+                        {
+                            ID_Application = appId.Value,
+                            ID_Login = token.Value,
+                            RegistrationNumber = registrationNumber
+                        })
+                        .FirstOrDefault();
 
-                        extCoreSettings.UnitTypeId = unit.ID_UnitType;
+                        if (unit != null)
+                        {
+                            extCoreSettings.UnitId = unit.ID.Value;
+                            extCoreSettings.UnitDisplayName = unit.DisplayName;
+                            extCoreSettings.UnitTypeId = unit.ID_UnitType;
+                        }
+                        else
+                        {
+                            extCoreSettings.UnitId = null;
+                            extCoreSettings.UnitDisplayName = null;
+                            extCoreSettings.UnitTypeId = null;
+                        }
                     }
                     catch (Exception e)
                     {
