@@ -1,4 +1,4 @@
-﻿@font-face {
+@font-face {
   font-family: "The Mix Basic";
   src: url("../../skautsis.center/content/fonts/TheMixBasic_TT6i.woff") format('woff');
 }
@@ -6002,15 +6002,36 @@ td.visible-print {
   background-color: #566c10;
   color: #fff;
 }
-.zone-aside-first .menu li.active a {
-  background-color: #334009;
+.zone-aside-first .menu li a {
+  color: #fff;
 }
-.zone-aside-first .menu a:hover,
-.zone-aside-first .menu a:active {
+.zone-aside-first .menu li a:hover,
+.zone-aside-first .menu li a:active {
   background-color: #44560d;
 }
-.zone-aside-first .nav a {
-  color: #fff;
+.zone-aside-first .menu li.active > a {
+  background-color: #334009;
+}
+.zone-aside-first .menu li ul li {
+  margin-bottom: 0;
+  background-color: #fff;
+}
+.zone-aside-first .menu li ul li a {
+  color: #566c10;
+  border: 2px solid #566c10;
+  border-left-width: 12px;
+  border-top: 0;
+}
+.zone-aside-first .menu li ul li a:hover,
+.zone-aside-first .menu li ul li a:active {
+  background-color: #fff;
+  color: #44560d;
+  border-left-color: #44560d;
+}
+.zone-aside-first .menu li ul li.active a {
+  background-color: #fff;
+  color: #334009;
+  border-left-color: #334009;
 }
 .teaserimage-panorama {
   width: 100%;

@@ -2,7 +2,7 @@
 Author: Vojtěch Vít
 Website: http://www.vojtechvit.cz
 Description: Grafické téma pro skautské oddíly postavené na šabloně Bootstrap 3.
-Version: 1.0
+Version: 1.0.1
 BaseTheme: SkautSIS.Troop
 # todo: provide tags
 # Tags: Classic, Serif

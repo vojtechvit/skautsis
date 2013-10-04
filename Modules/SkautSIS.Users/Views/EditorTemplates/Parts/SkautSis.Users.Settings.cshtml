@@ -10,14 +10,14 @@
     {
         <div>
             @Html.LabelFor(m => m.SettingsPart.RolesAssignedByMembership, T("Membership based role assignments"))
-            @Html.TextBoxFor(m => m.SettingsPart.RolesAssignedByMembership, new { @class = "textMedium" })
+            @Html.TextBoxFor(m => m.SettingsPart.RolesAssignedByMembership, new { @class = "text-medium" })
             @Html.ValidationMessageFor(m => m.SettingsPart.RolesAssignedByMembership, "*")
             <span class="hint">@T("Comma separated list of role names that will be assigned to members of Junák.")</span>
         </div>
         
         <div>
             @Html.LabelFor(m => m.SettingsPart.RolesAssignedBySkautIsRoles, T("SkautIS roles based role assignments"))
-            @Html.TextBoxFor(m => m.SettingsPart.RolesAssignedBySkautIsRoles, new { @class = "textMedium" })
+            @Html.TextBoxFor(m => m.SettingsPart.RolesAssignedBySkautIsRoles, new { @class = "text-medium" })
             @Html.ValidationMessageFor(m => m.SettingsPart.RolesAssignedBySkautIsRoles, "*")
             <span class="hint">@T("Comma separated list of \"SkautIsRoleId:WebsiteRoleName:WebsiteRoleName:WebsiteRoleName...\" strings that determine website roles assigned to members of Junák based on their SkautIS roles in the organizational unit that owns the website.")</span>
         </div>

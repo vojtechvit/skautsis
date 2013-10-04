@@ -1,9 +1,9 @@
-ï»¿Name: SkautSIS.Core
+Name: SkautSIS.Core
 AntiForgery: enabled
-Author: VojtÄ›ch VÃ­t
+Author: Vojtìch Vít
 Website: http://skautsis.codeplex.com
-Version: 1.0
-OrchardVersion: 1.7
+Version: 1.0.1
+OrchardVersion: 1.7.1
 Description: Contains common configuration for SkautSIS modules.
 Features:
     SkautSIS.Core:

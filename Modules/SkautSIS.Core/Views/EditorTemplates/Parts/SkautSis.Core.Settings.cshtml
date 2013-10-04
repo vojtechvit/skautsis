@@ -8,7 +8,7 @@
     </div>
     <div>
         @Html.LabelFor(m => m.AppId, T("Application ID"))
-        @Html.TextBoxFor(m => m.AppId, new { @class = "textMedium" })
+        @Html.TextBoxFor(m => m.AppId, new { @class = "text-medium" })
         @Html.ValidationMessageFor(m => m.AppId, "*")
         <span class="hint">@T("The identifier that you receive from SkautIS administrators after their approval of your application.")</span>
     </div>
