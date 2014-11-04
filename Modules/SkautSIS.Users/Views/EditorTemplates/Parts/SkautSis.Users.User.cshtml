@@ -18,7 +18,7 @@
         {
             <fieldset>
                 <label>@T("Birthdate")</label>
-                <input type="text" class="textMedium" disabled="disabled" value="@Display(New.DateTime(DateTimeUtc: Model.UserPart.BirthDate.Value, CustomFormat: Model.DateTimeLocalization.ShortDateFormat))" />
+                <input type="text" class="textMedium" disabled="disabled" value="@Display.DateTime(DateTimeUtc: Model.UserPart.BirthDate.Value, CustomFormat: T(Model.DateTimeLocalization.ShortDateFormat))" />
             </fieldset>
         }
     </fieldset>

@@ -5,7 +5,7 @@ using System.ServiceModel.Channels;
 
 namespace SkautSIS.Core.Models
 {
-    public class SkautSisCoreSettingsPart : ContentPart<SkautSisCoreSettingsPartRecord>
+    public class SkautSisCoreSettingsPart : ContentPart
     {
         private const string SkautIsProductionUrl = "https://is.skaut.cz/";
         private const string SkautIsTestingUrl = "http://test-is.skaut.cz/";
@@ -36,14 +36,14 @@ namespace SkautSIS.Core.Models
 
         public Guid? AppId
         {
-            get { return this.Record.AppId; }
-            set { this.Record.AppId = value; }
+            get { return string.IsNullOrEmpty(this.Retrieve<string>("AppId")) ? (Guid?)null : Guid.Parse(this.Retrieve<string>("AppId")); }
+            set { this.Store<string>("AppId", value.HasValue ? value.Value.ToString() : null); }
         }
 
         public bool UseTestingWebServices
         {
-            get { return this.Record.UseTestingWebServices; }
-            set { this.Record.UseTestingWebServices = value; }
+            get { return this.Retrieve(x => x.UseTestingWebServices); }
+            set { this.Store(x => x.UseTestingWebServices, value); }
         }
 
         public string SkautIsUrl

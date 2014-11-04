@@ -40,8 +40,8 @@ namespace SkautSIS.Core.Drivers
 
         protected override void Exporting(SkautSisCoreSettingsPart part, ExportContentContext context)
         {
-            context.Element(part.PartDefinition.Name).SetAttributeValue("AppId", part.Record.AppId);
-            context.Element(part.PartDefinition.Name).SetAttributeValue("UseTestingWebServices", part.Record.UseTestingWebServices);
+            context.Element(part.PartDefinition.Name).SetAttributeValue("AppId", part.AppId);
+            context.Element(part.PartDefinition.Name).SetAttributeValue("UseTestingWebServices", part.UseTestingWebServices);
         }
     }
 }

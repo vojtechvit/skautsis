@@ -65,10 +65,10 @@ namespace SkautSIS.Users.Drivers
 
         protected override void Exporting(SkautSisCoreExtSettingsPart part, ExportContentContext context)
         {
-            context.Element(part.PartDefinition.Name).SetAttributeValue("UnitId", part.Record.UnitId);
-            context.Element(part.PartDefinition.Name).SetAttributeValue("UnitRegistrationNumber", part.Record.UnitRegistrationNumber);
-            context.Element(part.PartDefinition.Name).SetAttributeValue("UnitDisplayName", part.Record.UnitDisplayName);
-            context.Element(part.PartDefinition.Name).SetAttributeValue("UnitTypeId", part.Record.UnitTypeId);
+            context.Element(part.PartDefinition.Name).SetAttributeValue("UnitId", part.UnitId);
+            context.Element(part.PartDefinition.Name).SetAttributeValue("UnitRegistrationNumber", part.UnitRegistrationNumber);
+            context.Element(part.PartDefinition.Name).SetAttributeValue("UnitDisplayName", part.UnitDisplayName);
+            context.Element(part.PartDefinition.Name).SetAttributeValue("UnitTypeId", part.UnitTypeId);
         }
     }
 }

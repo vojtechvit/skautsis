@@ -8,10 +8,9 @@ namespace SkautSIS.Users.Handlers
 {
     public class SkautSisUsersSettingsPartHandler : ContentHandler
     {
-        public SkautSisUsersSettingsPartHandler(IRepository<SkautSisUsersSettingsPartRecord> repository)
+        public SkautSisUsersSettingsPartHandler()
         {
             T = NullLocalizer.Instance;
-            Filters.Add(StorageFilter.For(repository));
             Filters.Add(new ActivatingFilter<SkautSisUsersSettingsPart>("Site"));
         }
 

@@ -4,6 +4,9 @@ param(
     [string]$SolutionPath
 )
 
+$originalLocation = Get-Location
+Set-Location $PSScriptRoot
+
 $orchardWebPath = Get-Item (Join-Path $SolutionPath "\src\Orchard.Web")
     
 if ((Get-ChildItem $orchardWebPath -Directory | ? { $_.Name -in "Themes", "Modules" }).Length -ne 2)
@@ -16,7 +19,7 @@ if ((Get-ChildItem $orchardWebPath -Directory | ? { $_.Name -in "Themes", "Modul
 
     $projectFolderName = $_
     $projectFolderPath = Join-Path $orchardWebPath $projectFolderName
-
+    
     Get-ChildItem $projectFolderName -Directory | % {
         
         $sourceFullName = $_.FullName
@@ -25,3 +28,5 @@ if ((Get-ChildItem $orchardWebPath -Directory | ? { $_.Name -in "Themes", "Modul
         cmd /c mklink /J "$targetFullName" "$sourceFullName"
     }
 }
+
+Set-Location $originalLocation

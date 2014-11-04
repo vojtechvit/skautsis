@@ -1,4 +1,4 @@
-﻿using Orchard.Core.Shapes.Localization;
+﻿using Orchard.Localization.Services;
 using SkautSIS.Users.Models;
 
 namespace SkautSIS.Users.ViewModels
@@ -7,6 +7,6 @@ namespace SkautSIS.Users.ViewModels
     {
         public SkautIsUserPart UserPart { get; set; }
 
-        public IDateTimeLocalization DateTimeLocalization { get; set; }
+        public IDateTimeFormatProvider DateTimeLocalization { get; set; }
     }
 }
