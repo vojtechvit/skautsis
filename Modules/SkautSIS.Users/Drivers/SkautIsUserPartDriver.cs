@@ -1,7 +1,7 @@
 ﻿using Orchard.ContentManagement;
 using Orchard.ContentManagement.Drivers;
 using Orchard.ContentManagement.Handlers;
-using Orchard.Core.Shapes.Localization;
+using Orchard.Localization.Services;
 using SkautSIS.Users.Models;
 using SkautSIS.Users.ViewModels;
 using System;
@@ -10,9 +10,9 @@ namespace SkautSIS.Users.Drivers
 {
     public class SkautIsUserPartDriver : ContentPartDriver<SkautIsUserPart>
     {
-        private readonly Lazy<IDateTimeLocalization> dateTimeLocalization;
+        private readonly Lazy<IDateTimeFormatProvider> dateTimeLocalization;
 
-        public SkautIsUserPartDriver(Lazy<IDateTimeLocalization> dateTimeLocalization)
+        public SkautIsUserPartDriver(Lazy<IDateTimeFormatProvider> dateTimeLocalization)
         {
             this.dateTimeLocalization = dateTimeLocalization;
         }

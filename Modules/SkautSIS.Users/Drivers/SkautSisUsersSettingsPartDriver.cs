@@ -115,8 +115,8 @@ namespace SkautSIS.Users.Drivers
 
         protected override void Exporting(SkautSisUsersSettingsPart part, ExportContentContext context)
         {
-            context.Element(part.PartDefinition.Name).SetAttributeValue("RolesAssignedByMembership", part.Record.RolesAssignedByMembership);
-            context.Element(part.PartDefinition.Name).SetAttributeValue("RolesAssignedBySkautIsRoles", part.Record.RolesAssignedBySkautIsRoles);
+            context.Element(part.PartDefinition.Name).SetAttributeValue("RolesAssignedByMembership", part.RolesAssignedByMembership);
+            context.Element(part.PartDefinition.Name).SetAttributeValue("RolesAssignedBySkautIsRoles", part.RolesAssignedBySkautIsRoles);
         }
     }
 }

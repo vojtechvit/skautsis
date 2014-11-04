@@ -8,10 +8,9 @@ namespace SkautSIS.Core.Handlers
 {
     public class SkautSisCoreSettingsPartHandler : ContentHandler
     {
-        public SkautSisCoreSettingsPartHandler(IRepository<SkautSisCoreSettingsPartRecord> repository)
+        public SkautSisCoreSettingsPartHandler()
         {
             T = NullLocalizer.Instance;
-            Filters.Add(StorageFilter.For(repository));
             Filters.Add(new ActivatingFilter<SkautSisCoreSettingsPart>("Site"));
         }
 

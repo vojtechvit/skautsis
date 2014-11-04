@@ -12,7 +12,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SkautSIS.Users</RootNamespace>
     <AssemblyName>SkautSIS.Users</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -34,6 +34,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -43,14 +44,20 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\nhibernate\NHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.ComponentModel.DataAnnotations">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel">
       <Private>False</Private>
@@ -58,6 +65,10 @@
     <Reference Include="System.Web.Abstractions">
       <Private>False</Private>
     </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lib\aspnetmvc\System.Web.Mvc.dll</HintPath>
@@ -67,7 +78,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Service References\Services.SkautIs.OrganizationUnit\OrganizationUnit.wsdl" />
+    <None Include="Service References\Services.SkautIs.OrganizationUnit\OrganizationUnit.wsdl" />
     <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.Account.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -231,12 +242,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.MemberCardPrintInsertOutput.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.MemberCardUpdateDisplayNameOutput.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.MemberCardUpdateValidOutput.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.Membership.datasource">
@@ -618,6 +623,108 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Placement.info" />
+    <Content Include="Service References\Services.SkautIs.UserManagement\SkautSIS.Users.Services.SkautIs.UserManagement.HolidayDetailNotHolidayOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.UserManagement\SkautSIS.Users.Services.SkautIs.UserManagement.LoginUpdateRefreshOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.UserManagement\SkautSIS.Users.Services.SkautIs.UserManagement.Plugin.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.UserManagement\SkautSIS.Users.Services.SkautIs.UserManagement.PluginAllOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.UserManagement\SkautSIS.Users.Services.SkautIs.UserManagement.SettingsGroupAllOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.UserManagement\SkautSIS.Users.Services.SkautIs.UserManagement.TempFile.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.UserManagement\SkautSIS.Users.Services.SkautIs.UserManagement.UserAuthentication.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.UserManagement\SkautSIS.Users.Services.SkautIs.UserManagement.UserAuthenticationInsertOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.UserManagement\SkautSIS.Users.Services.SkautIs.UserManagement.UserAuthenticationRequestOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.UserManagement\SkautSIS.Users.Services.SkautIs.UserManagement.UserAuthenticationStateAllOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.UserManagement\SkautSIS.Users.Services.SkautIs.UserManagement.UserAuthenticationTypeAllOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.MemberCardAllUnitOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.MemberCardPrint.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.MemberCardPrintAddCardsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.MembershipAllGoogleGroupOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.PersonAllGoogleGroupOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.PersonDetailHomepageOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.PersonJournalRoverAllOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.PersonOtherDetailUnitEnrollOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.PersonQualificationLetterDownloadOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.QualificationDownloadOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.QualificationMistakeInsertOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.QualificationRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.QualificationRequestAllOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.QualificationRequestDetailDownloadLetterOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.QualificationRequestInsertOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.QualificationRequestStateAllOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.QualificationType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.StampTypeAllOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.UnitRegistrationAllYearUstrediOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.UnitRegistrationReportChildOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.UnitStamp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.UnitStampAllOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Services.SkautIs.OrganizationUnit\SkautSIS.Users.Services.SkautIs.OrganizationUnit.UnitStampInsertOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\Services.SkautIs.UserManagement\UserManagement.disco" />
     <None Include="Service References\Services.SkautIs.UserManagement\configuration91.svcinfo" />
     <None Include="Service References\Services.SkautIs.UserManagement\configuration.svcinfo" />
@@ -625,13 +732,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Service References\Services.SkautIs.OrganizationUnit\OrganizationUnit.disco" />
-    <Content Include="Service References\Services.SkautIs.OrganizationUnit\configuration91.svcinfo" />
-    <Content Include="Service References\Services.SkautIs.OrganizationUnit\configuration.svcinfo" />
-    <Content Include="Service References\Services.SkautIs.OrganizationUnit\Reference.svcmap">
+    <None Include="Service References\Services.SkautIs.OrganizationUnit\OrganizationUnit.disco" />
+    <None Include="Service References\Services.SkautIs.OrganizationUnit\configuration91.svcinfo" />
+    <None Include="Service References\Services.SkautIs.OrganizationUnit\configuration.svcinfo" />
+    <None Include="Service References\Services.SkautIs.OrganizationUnit\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <Content Include="Web.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Properties\AssemblyInfo.cs" />
@@ -686,11 +793,9 @@
     <Compile Include="Handlers\SkautSisUsersSettingsPartHandler.cs" />
     <Compile Include="Migrations.cs" />
     <Compile Include="Models\SkautSisCoreExtSettingsPart.cs" />
-    <Compile Include="Models\SkautSisCoreExtSettingsPartRecord.cs" />
     <Compile Include="Models\SkautIsUserPart.cs" />
     <Compile Include="Models\SkautIsUserPartRecord.cs" />
     <Compile Include="Models\SkautSisUsersSettingsPart.cs" />
-    <Compile Include="Models\SkautSisUsersSettingsPartRecord.cs" />
     <Compile Include="Service References\Services.SkautIs.OrganizationUnit\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
