@@ -6146,8 +6146,21 @@ td.visible-print {
         height: 600px !important;
     }
 }*/
+.widget-google-calendar-widget .btn {
+  margin-top: 10px;
+}
+.widget-google-calendar-widget .fc-toolbar h2 {
+  margin-top: 7px;
+}
 .fc h2 {
+  margin-top: 5px;
   font-size: 18px;
+}
+@media (max-width: 991px) {
+  .fc .fc-right {
+    margin-top: 5px;
+    clear: both;
+  }
 }
 .klubovna-svetlusky {
   border-color: #80638f !important;
