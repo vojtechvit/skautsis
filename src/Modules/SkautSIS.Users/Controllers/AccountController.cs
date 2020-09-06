@@ -98,13 +98,14 @@ namespace SkautSIS.Users.Controllers
             return this.RedirectLocal(ReturnURL);
         }
 
+        [AlwaysAccessible]
         public ActionResult LogOff(string ReturnUrl, bool? tokenExpired)
         {
             var user = this.authenticationService.GetAuthenticatedUser();
+            this.authenticationService.SignOut();
 
             if (user != null)
             {
-                this.authenticationService.SignOut();
                 var userPart = user.As<SkautIsUserPart>();
 
                 if (userPart != null)
@@ -115,7 +116,6 @@ namespace SkautSIS.Users.Controllers
                         var appId = this.coreSettings.AppId;
                         var userToken = userPart.Token.Value;
 
-                        this.authenticationService.SignOut();
                         this.userService.InvalidateLoginData(user);
 
                         if (ReturnUrl != null)

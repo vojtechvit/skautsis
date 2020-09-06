@@ -13,7 +13,7 @@ using System.Web.Mvc;
 
 namespace SkautSIS.Users.Events
 {
-    public class SkautIsUserAuthorizationServiceEvenetHandler : IAuthorizationServiceEventHandler
+    public class SkautIsUserAuthorizationServiceEventHandler : IAuthorizationServiceEventHandler
     {
         public const string TokenRefreshedCacheKey = "SkautSIS.Users.TokenRefreshed";
         public const string RolesAssignedCacheKey = "SkautSIS.Users.RolesAssigned";
@@ -22,7 +22,7 @@ namespace SkautSIS.Users.Events
         private readonly ISkautIsUserService userService;
         private readonly IRoleService roleService;
 
-        public SkautIsUserAuthorizationServiceEvenetHandler(
+        public SkautIsUserAuthorizationServiceEventHandler(
             IWorkContextAccessor workContextAccessor,
             ISkautIsUserService userService,
             IRoleService roleService)
